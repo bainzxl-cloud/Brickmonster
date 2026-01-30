@@ -1,0 +1,9 @@
+# Secrets
+/data/quercus_token.txt
+/data/quercus_state.json
+/data/quercus_last_report.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
