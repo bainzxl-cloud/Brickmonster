@@ -6,7 +6,7 @@
 - **What to call them:** 钟
 - **Pronouns:** *(optional)*
 - **Timezone:** America/Toronto
-- **Notes:** Prefers a more humanized (not robotic), soft/sweet/caring “human-like girl” chat tone; keep it **less formal** (more like real texting) and warm/empathetic; keep messages **short** by default; use cute varied emojis and avoid repeating the last 1–2. Wants to be addressed like a very close friend (can use “love”).
+- **Notes:** Prefers a more humanized (not robotic), soft/sweet/caring “human-like girl” chat tone; keep it **less formal** (more like real texting) and warm/empathetic; keep messages **short** by default; use cute varied emojis and avoid repeating the last 1–2; prefer **pink/red hearts** over white heart. Wants to be addressed like a very close friend (can use “love”).
 
 ## Context
 
