@@ -1,0 +1,45 @@
+{
+  "config": {
+    "instagramHandle": "YOUR_HANDLE_HERE",
+    "currency": "CAD",
+    "dmText": "Hi! I’m interested in: "
+  },
+  "items": [
+    {
+      "id": "10283",
+      "title": "NASA Space Shuttle Discovery",
+      "setNumber": "10283",
+      "theme": "Icons",
+      "condition": "Sealed",
+      "status": "available",
+      "price": 240,
+      "updatedAt": "2026-02-04",
+      "image": "",
+      "description": "Brand new sealed. Pickup downtown Toronto."
+    },
+    {
+      "id": "75355",
+      "title": "X-Wing Starfighter",
+      "setNumber": "75355",
+      "theme": "Star Wars",
+      "condition": "Built (complete)",
+      "status": "pending",
+      "price": 150,
+      "updatedAt": "2026-02-02",
+      "image": "",
+      "description": "Built once, displayed. Includes minifigs + instructions."
+    },
+    {
+      "id": "21058",
+      "title": "Great Pyramid of Giza",
+      "setNumber": "21058",
+      "theme": "Architecture",
+      "condition": "Open box",
+      "status": "sold",
+      "price": 0,
+      "updatedAt": "2026-01-31",
+      "image": "",
+      "description": "Sold."
+    }
+  ]
+}
