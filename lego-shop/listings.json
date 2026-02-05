@@ -39,6 +39,24 @@
       "tags": ["series 27", "minifigures", "complete set"],
       "description": "Complete set of 12 minifigures, sealed in original box.",
       "remaining": 1
+    },
+    {
+      "id": "njo0060",
+      "name": "Lego Ninjago Pythor Chumsworth (Purple with Black)",
+      "setNumber": "NJO0060",
+      "category": "Minifigure",
+      "condition": "Used",
+      "availability": "in_stock",
+      "price": 30,
+      "images": [
+        "assets/njo0060-1.png",
+        "assets/njo0060-2.png",
+        "assets/njo0060-3.png",
+        "assets/njo0060-4.png"
+      ],
+      "tags": ["ninjago", "pythor"],
+      "description": "Like new. No cracks or faded paint. Comes with weapon (as shown in picture). Sealed in a small bag.",
+      "remaining": 1
     }
   ]
 }
