@@ -91,6 +91,21 @@
       "tags": ["star wars", "hoth"],
       "description": "Brand new and sealed. Box condition 10/10 (excellent).",
       "remaining": 1
+    },
+    {
+      "id": "drm012",
+      "name": "Lego DreamZzz - Nightmare King",
+      "setNumber": "DRM012",
+      "category": "Minifigure",
+      "condition": "New",
+      "availability": "in_stock",
+      "price": 15,
+      "images": [
+        "assets/drm012-1.jpg"
+      ],
+      "tags": ["dreamzzz", "nightmare king"],
+      "description": "Assembled only, never played with. Comes with both weapons (as shown in the picture). Sealed in a bag.",
+      "remaining": 1
     }
   ]
 }
