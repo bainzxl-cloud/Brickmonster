@@ -27,6 +27,10 @@ body{
   z-index:10;
 }
 .header__inner{display:flex;gap:16px;align-items:center;justify-content:space-between}
+
+.brand--withLogo{display:flex;align-items:center;gap:12px}
+.brand__logo{width:54px;height:54px;border-radius:14px;object-fit:cover;border:1px solid var(--border);background:rgba(255,255,255,.03)}
+.brand__text{min-width:0}
 .title{margin:0;font-size:20px;letter-spacing:.2px}
 .subtitle{margin:4px 0 0;color:var(--muted);font-size:13px}
 .contact{display:flex;gap:10px;flex-wrap:wrap}
