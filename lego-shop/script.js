@@ -318,6 +318,7 @@ async function init(){
   // event wiring
   ['q','category','condition','availability','priceMin','priceMax','sort'].forEach(id=>{
     $(id).addEventListener('input', scheduleRender);
+    $(id).addEventListener('change', scheduleRender);
   });
 
   $('clear').addEventListener('click', ()=>{
