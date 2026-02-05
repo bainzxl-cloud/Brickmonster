@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Browse LEGO listings. Search, filter, and sort. No checkout — DM to buy." />
+  <title>LEGO Listings</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <div class="brand brand--withLogo">
+        <img class="brand__logo" src="assets/logo.png" alt="brickmonster" />
+        <div class="brand__text">
+          <h1 id="siteTitle" class="title">LEGO for Sale</h1>
+          <p id="siteSubtitle" class="subtitle">Browse listings • DM to buy</p>
+        </div>
+      </div>
+      <div class="contact">
+        <a id="igLink" class="btn btn--ghost" href="#" target="_blank" rel="noopener">Instagram</a>
+        <a id="dmLink" class="btn" href="#">DM Me</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="controls" aria-label="Search and filters">
+      <div class="controls__row">
+        <label class="field">
+          <span class="field__label">Search</span>
+          <input id="q" class="input" type="search" placeholder="Search (name, set #, tags)…" autocomplete="off" />
+        </label>
+
+        <label class="field">
+          <span class="field__label">Category</span>
+          <select id="category" class="select" aria-label="Category">
+            <option value="">All categories</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span class="field__label">Condition</span>
+          <select id="condition" class="select" aria-label="Condition">
+            <option value="">Any</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span class="field__label">Availability</span>
+          <select id="availability" class="select" aria-label="Availability">
+            <option value="">Any</option>
+            <option value="in_stock">In stock</option>
+            <option value="reserved">Reserved</option>
+            <option value="out_of_stock">Out of stock</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="controls__row controls__row--2">
+        <label class="field">
+          <span class="field__label">Price min</span>
+          <input id="priceMin" class="input" inputmode="numeric" placeholder="0" />
+        </label>
+        <label class="field">
+          <span class="field__label">Price max</span>
+          <input id="priceMax" class="input" inputmode="numeric" placeholder="500" />
+        </label>
+
+        <label class="field">
+          <span class="field__label">Sort</span>
+          <select id="sort" class="select" aria-label="Sort">
+            <option value="newest">Newest</option>
+            <option value="price_asc">Price: low → high</option>
+            <option value="price_desc">Price: high → low</option>
+          </select>
+        </label>
+
+        <div class="field field--actions">
+          <span class="field__label">&nbsp;</span>
+          <button id="clear" class="btn btn--ghost" type="button">Clear</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="statsbar">
+        <div id="stats" class="stats" aria-live="polite"></div>
+        <div id="activeFilters" class="chips" aria-label="Active filters"></div>
+      </div>
+      <div id="grid" class="grid" aria-label="Listings"></div>
+      <div id="empty" class="empty" hidden>
+        <p>No listings match that. Try clearing filters.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>Static, fast, no checkout.</span>
+      <span class="muted">Edit <code>listings.json</code> to update inventory.</span>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

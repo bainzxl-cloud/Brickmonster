@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="LEGO listing details" />
+  <title>Product • LEGO Listings</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <div class="brand">
+        <h1 class="title" id="siteTitle">LEGO for Sale</h1>
+        <p id="siteSubtitle" class="subtitle">Details • DM to buy</p>
+      </div>
+      <div class="contact">
+        <a id="igLink" class="btn btn--ghost" href="#" target="_blank" rel="noopener">Instagram</a>
+        <a id="dmLink" class="btn" href="#">DM Me</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav class="crumbs">
+      <a id="backLink" class="btn btn--ghost" href="index.html">← Back</a>
+      <span class="muted" id="crumbHint">You can share this page link</span>
+    </nav>
+
+    <section id="product" class="product" aria-label="Product detail" hidden>
+      <div class="product__content">
+        <div class="gallery">
+          <div class="gallery__stage">
+            <img id="pImg" class="gallery__main" alt="" />
+            <button id="gPrev" class="gallery__nav gallery__nav--prev" type="button" aria-label="Previous image">‹</button>
+            <button id="gNext" class="gallery__nav gallery__nav--next" type="button" aria-label="Next image">›</button>
+            <div id="gCount" class="gallery__count" aria-label="Image counter"></div>
+          </div>
+          <div id="pThumbs" class="gallery__thumbs" aria-label="Images"></div>
+        </div>
+
+        <div class="product__meta">
+          <h2 id="pTitle" class="product__title"></h2>
+          <div id="pBadges" class="badges"></div>
+          <p id="pDesc" class="product__desc"></p>
+
+          <div class="kv">
+            <div><span>Set #</span><strong id="pSet"></strong></div>
+            <div><span>Category</span><strong id="pCat"></strong></div>
+            <div><span>Condition</span><strong id="pCond"></strong></div>
+            <div><span>Price</span><strong id="pPrice"></strong></div>
+          </div>
+
+          <div id="remainingBox" class="kv kv--single" hidden>
+            <div><span>Remaining</span><strong id="pRemaining"></strong></div>
+          </div>
+
+          <div class="actions">
+            <a id="pDm" class="btn" href="#">DM about this</a>
+            <a id="pIg" class="btn btn--ghost" href="#" target="_blank" rel="noopener">Open Instagram</a>
+            <button id="copyLink" class="btn btn--ghost" type="button">Copy link</button>
+          </div>
+
+          <p class="fineprint" id="buyHint">Tip: include the set # when you DM so it’s easy to find.</p>
+          <p class="fineprint" id="pickupHint"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="notFound" class="empty" hidden>
+      <p>Couldn’t find that product. Go back and try another listing.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>Static, fast, no checkout.</span>
+      <span class="muted">Edit <code>listings.json</code> to update inventory.</span>
+    </div>
+  </footer>
+
+  <script src="product.js" defer></script>
+</body>
+</html>

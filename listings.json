@@ -1,0 +1,111 @@
+{
+  "config": {
+    "siteTitle": "brickmonster",
+    "instagramHandle": "brickmonster_",
+    "currency": "CAD",
+    "dmText": "Hi! I’m interested in: ",
+    "pickupLocation": "Toronto",
+    "shippingNote": "DM for shipping info"
+  },
+  "items": [
+    {
+      "id": "lor139",
+      "name": "Lego LOR139 — Lord of the Rings (Sauron)",
+      "setNumber": "LOR139",
+      "category": "Minifig",
+      "condition": "New",
+      "availability": "in_stock",
+      "price": 89.99,
+      "images": [
+        "assets/lor139-1.jpg"
+      ],
+      "tags": ["lord of the rings", "sauron", "minifig"],
+      "description": "New/never played with. Comes with weapon. Original sealed cape. Minifig sealed in a small bag.",
+      "remaining": 1
+    },
+    {
+      "id": "71048",
+      "name": "Lego Minifigures Series 27 (Complete Set of 12)",
+      "setNumber": "71048",
+      "category": "Mini-figure",
+      "condition": "New",
+      "availability": "in_stock",
+      "price": 79,
+      "images": [
+        "assets/71048-1.jpg",
+        "assets/71048-2.jpg",
+        "assets/71048-3.jpg"
+      ],
+      "tags": ["series 27", "minifigures", "complete set"],
+      "description": "Complete set of 12 minifigures, sealed in original box.",
+      "remaining": 1
+    },
+    {
+      "id": "njo0060",
+      "name": "Lego Ninjago Pythor Chumsworth (Purple with Black)",
+      "setNumber": "NJO0060",
+      "category": "Minifigure",
+      "condition": "Used",
+      "availability": "in_stock",
+      "price": 30,
+      "images": [
+        "assets/njo0060-1.png",
+        "assets/njo0060-2.png",
+        "assets/njo0060-3.png",
+        "assets/njo0060-4.png"
+      ],
+      "tags": ["ninjago", "pythor"],
+      "description": "Like new. No cracks or faded paint. Comes with weapon (as shown in picture). Sealed in a small bag.",
+      "remaining": 1
+    },
+    {
+      "id": "njo0067",
+      "name": "Lego Ninjago Skalidor",
+      "setNumber": "NJO0067",
+      "category": "Minifigure",
+      "condition": "Used",
+      "availability": "in_stock",
+      "price": 30,
+      "images": [
+        "assets/njo0067-1.png",
+        "assets/njo0067-2.png",
+        "assets/njo0067-3.png",
+        "assets/njo0067-4.png"
+      ],
+      "tags": ["ninjago", "skalidor"],
+      "description": "Like new. No cracks or faded paint. Sealed in a small bag.",
+      "remaining": 1
+    },
+    {
+      "id": "75203",
+      "name": "Lego Star Wars: Hoth Medical Chamber",
+      "setNumber": "75203",
+      "category": "Set",
+      "condition": "New",
+      "availability": "in_stock",
+      "price": 103,
+      "images": [
+        "assets/75203-1.png",
+        "assets/75203-2.png"
+      ],
+      "tags": ["star wars", "hoth"],
+      "description": "Brand new and sealed. Box condition 10/10 (excellent).",
+      "remaining": 1
+    },
+    {
+      "id": "drm012",
+      "name": "Lego DreamZzz - Nightmare King",
+      "setNumber": "DRM012",
+      "category": "Minifigure",
+      "condition": "New",
+      "availability": "in_stock",
+      "price": 15,
+      "images": [
+        "assets/drm012-1.jpg"
+      ],
+      "tags": ["dreamzzz", "nightmare king"],
+      "description": "Assembled only, never played with. Comes with both weapons (as shown in the picture). Sealed in a bag.",
+      "remaining": 1
+    }
+  ]
+}
