@@ -7,6 +7,8 @@ const CONFIG = {
   dmText: "Hi! I'm interested in: ",
   currency: "CAD",
   siteTitle: "LEGO for Sale",
+  pickupLocation: "",
+  shippingNote: "",
 };
 
 const $ = (id) => document.getElementById(id);
@@ -68,6 +70,12 @@ function applyContactLinks(){
   const igUrl = ig ? `https://instagram.com/${ig}` : null;
   const igLink = $('igLink');
   const dmLink = $('dmLink');
+
+  const titleEl = $('siteTitle');
+  if(titleEl) titleEl.textContent = CONFIG.siteTitle || 'LEGO for Sale';
+  const subEl = $('siteSubtitle');
+  if(subEl) subEl.textContent = 'Browse listings • DM to buy';
+
   igLink.href = igUrl || '#';
   igLink.textContent = ig ? `@${ig}` : 'Instagram (set handle)';
   dmLink.href = igUrl || '#';

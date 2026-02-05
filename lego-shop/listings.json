@@ -1,9 +1,11 @@
 {
   "config": {
-    "siteTitle": "LEGO for Sale",
-    "instagramHandle": "YOUR_HANDLE_HERE",
+    "siteTitle": "brickmonster",
+    "instagramHandle": "brickmonster_",
     "currency": "CAD",
-    "dmText": "Hi! I’m interested in: "
+    "dmText": "Hi! I’m interested in: ",
+    "pickupLocation": "Toronto",
+    "shippingNote": "DM for shipping info"
   },
   "items": [
     {

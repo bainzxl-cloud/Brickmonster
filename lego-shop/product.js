@@ -5,6 +5,8 @@ const CONFIG = {
   dmText: "Hi! I'm interested in: ",
   currency: "CAD",
   siteTitle: "LEGO for Sale",
+  pickupLocation: "",
+  shippingNote: "",
 };
 
 const $ = (id) => document.getElementById(id);
@@ -55,6 +57,8 @@ function applyContactLinks(){
   $('igLink').textContent = ig ? `@${ig}` : 'Instagram (set handle)';
   $('dmLink').href = igUrl || '#';
   $('siteTitle').textContent = CONFIG.siteTitle || 'LEGO for Sale';
+  const sub = $('siteSubtitle');
+  if(sub) sub.textContent = 'Details • DM to buy';
 }
 
 function dmLinkFor(){
@@ -170,6 +174,13 @@ async function init(){
   $('pIg').href = dm;
 
   setMetaTitle(item.name);
+
+  // pickup + shipping hint
+  const parts = [];
+  if(CONFIG.pickupLocation) parts.push(`Pickup: ${CONFIG.pickupLocation}`);
+  if(CONFIG.shippingNote) parts.push(CONFIG.shippingNote);
+  const pickupHint = $('pickupHint');
+  if(pickupHint) pickupHint.textContent = parts.join(' • ');
 
   $('copyLink').onclick = async ()=>{
     try{
