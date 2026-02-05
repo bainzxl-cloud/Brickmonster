@@ -42,6 +42,19 @@ function uniqSorted(list){
   return Array.from(new Set(list.filter(Boolean))).sort((a,b)=>a.localeCompare(b));
 }
 
+function normalizeCategory(cat){
+  const raw = safeText(cat).trim();
+  const s = norm(raw).replace(/[-_\s]/g, "");
+  if(!s) return "";
+
+  // merge common minifig variants
+  if(s === 'minifig' || s === 'minifigure' || s === 'minifigures' || s === 'minifigure(s)' || s === 'minifigureseries' || s === 'minifigureseries'){
+    return 'Minifigure';
+  }
+
+  return raw;
+}
+
 function badgeAvailability(av){
   const s = (av||"in_stock").toLowerCase();
   const cls = s === 'out_of_stock' ? 'badge--out_of_stock' : s === 'reserved' ? 'badge--reserved' : 'badge--in_stock';
@@ -300,7 +313,7 @@ async function init(){
     id: x.id ?? x.setNumber ?? x.slug,
     name: x.name ?? x.title ?? '',
     setNumber: x.setNumber ?? '',
-    category: x.category ?? x.theme ?? '',
+    category: normalizeCategory(x.category ?? x.theme ?? ''),
     condition: x.condition ?? '',
     availability: x.availability ?? (x.status ? ({available:'in_stock', pending:'reserved', sold:'out_of_stock'}[x.status] || 'in_stock') : 'in_stock'),
     price: (x.price === 0 ? 0 : (x.price ?? null)),

@@ -47,6 +47,12 @@ body{
   padding:10px 12px;
   outline:none;
 }
+
+/* Dropdown list styling (helps Edge/Chrome show readable option text) */
+.select option{
+  color:#000;
+  background:#fff;
+}
 .input:focus,.select:focus{border-color: rgba(255,77,141,.55); box-shadow: 0 0 0 4px rgba(255,77,141,.12)}
 
 .btn{

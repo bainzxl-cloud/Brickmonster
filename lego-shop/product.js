@@ -50,6 +50,14 @@ function primaryImage(item){
   return arr[0] || item.image || "";
 }
 
+function normalizeCategory(cat){
+  const raw = safeText(cat).trim();
+  const s = raw.toLowerCase().replace(/[-_\s]/g, "");
+  if(!s) return "";
+  if(s === 'minifig' || s === 'minifigure' || s === 'minifigures' || s === 'minifigure(s)') return 'Minifigure';
+  return raw;
+}
+
 function applyContactLinks(){
   const ig = CONFIG.instagramHandle?.trim();
   const igUrl = ig ? `https://instagram.com/${ig}` : null;
@@ -190,7 +198,7 @@ async function init(){
     id: x.id ?? x.setNumber ?? x.slug,
     name: x.name ?? x.title ?? '',
     setNumber: x.setNumber ?? '',
-    category: x.category ?? x.theme ?? '',
+    category: normalizeCategory(x.category ?? x.theme ?? ''),
     condition: x.condition ?? '',
     availability: x.availability ?? (x.status ? ({available:'in_stock', pending:'reserved', sold:'out_of_stock'}[x.status] || 'in_stock') : 'in_stock'),
     price: (x.price === 0 ? 0 : (x.price ?? null)),
