@@ -110,6 +110,7 @@ body{
 .modal__title{margin:0 0 6px}
 .modal__desc{margin:10px 0 12px;color:var(--muted);white-space:pre-wrap}
 .kv{display:grid;grid-template-columns: 1fr 1fr;gap:10px;margin:12px 0 14px}
+.kv.kv--single{grid-template-columns: 1fr; margin-top: 0}
 .kv div{border:1px solid var(--border);border-radius:14px;padding:10px 12px;background: rgba(255,255,255,.02)}
 .kv span{display:block;color:var(--muted);font-size:12px;margin-bottom:2px}
 .actions{display:flex;gap:10px;flex-wrap:wrap}

@@ -149,6 +149,7 @@ async function init(){
     image: x.image ?? '',
     tags: x.tags ?? [],
     description: x.description ?? '',
+    remaining: (x.remaining ?? null),
   })).filter(x=>x.id && x.name);
 
   const item = items.find(x=>String(x.id)===String(id));
@@ -166,6 +167,16 @@ async function init(){
   $('pCond').textContent = safeText(item.condition || '—');
   $('pPrice').textContent = (item.price != null && item.price !== "") ? money(item.price) : 'DM';
   $('pBadges').innerHTML = `${badgeAvailability(item.availability)}${badgeCondition(item.condition)}`;
+
+  // remaining box
+  const rb = $('remainingBox');
+  const rv = $('pRemaining');
+  if(item.remaining != null && item.remaining !== ''){
+    if(rv) rv.textContent = String(item.remaining);
+    if(rb) rb.hidden = false;
+  } else {
+    if(rb) rb.hidden = true;
+  }
 
   setGallery(item, 0);
 

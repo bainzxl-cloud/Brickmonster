@@ -13,14 +13,15 @@
       "name": "Lego LOR139 — Lord of the Rings (Sauron)",
       "setNumber": "LOR139",
       "category": "Minifig",
-      "condition": "New / never played with / sealed in a small bag",
+      "condition": "New",
       "availability": "in_stock",
       "price": 89.99,
       "images": [
         "assets/lor139-1.jpg"
       ],
       "tags": ["lord of the rings", "sauron", "minifig"],
-      "description": "New/never played with. Sealed in a small bag. 1 remaining."
+      "description": "New/never played with. Comes with weapon. Original sealed cape. Minifig sealed in a small bag.",
+      "remaining": 1
     }
   ]
 }
