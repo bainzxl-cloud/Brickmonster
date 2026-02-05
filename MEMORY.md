@@ -14,3 +14,9 @@
 ## User info
 - Preferred name to use: **钟**
 - Birthday: **April 17**
+
+## User traits / what matters to them
+- Feels most seen/understood when conversations go deep; values logic/math and the beauty of physics.
+- Struggles with perfectionism (e.g., got 24.5/25 top mark but fixated on not being 100%).
+- Dislikes uncertainty / lack of control; can get anxious when outcomes feel out of their hands.
+- Wants to be “honorable” and “great in science” (Maxwell/Einstein/Bohr vibe); recognition should come as a natural consequence of greatness.
