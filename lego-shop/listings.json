@@ -22,6 +22,23 @@
       "tags": ["lord of the rings", "sauron", "minifig"],
       "description": "New/never played with. Comes with weapon. Original sealed cape. Minifig sealed in a small bag.",
       "remaining": 1
+    },
+    {
+      "id": "71048",
+      "name": "Lego Minifigures Series 27 (Complete Set of 12)",
+      "setNumber": "71048",
+      "category": "Mini-figure",
+      "condition": "New",
+      "availability": "in_stock",
+      "price": 79,
+      "images": [
+        "assets/71048-1.jpg",
+        "assets/71048-2.jpg",
+        "assets/71048-3.jpg"
+      ],
+      "tags": ["series 27", "minifigures", "complete set"],
+      "description": "Complete set of 12 minifigures, sealed in original box.",
+      "remaining": 1
     }
   ]
 }
