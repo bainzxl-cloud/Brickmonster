@@ -66,7 +66,12 @@
       "condition": "Used",
       "availability": "in_stock",
       "price": 30,
-      "images": [],
+      "images": [
+        "assets/njo0067-1.png",
+        "assets/njo0067-2.png",
+        "assets/njo0067-3.png",
+        "assets/njo0067-4.png"
+      ],
       "tags": ["ninjago", "skalidor"],
       "description": "Like new. No cracks or faded paint. Sealed in a small bag.",
       "remaining": 1
