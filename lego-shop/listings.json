@@ -84,7 +84,10 @@
       "condition": "New",
       "availability": "in_stock",
       "price": 103,
-      "images": [],
+      "images": [
+        "assets/75203-1.png",
+        "assets/75203-2.png"
+      ],
       "tags": ["star wars", "hoth"],
       "description": "Brand new and sealed. Box condition 10/10 (excellent).",
       "remaining": 1
