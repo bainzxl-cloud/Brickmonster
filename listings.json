@@ -133,7 +133,9 @@
       "condition": "New",
       "availability": "in_stock",
       "price": 79,
-      "images": [],
+      "images": [
+        "assets/nex106-1.jpg"
+      ],
       "tags": ["nexo knights", "clay"],
       "description": "Assembled only, never played with. No cracks. Plate included. Sealed in a bag.",
       "remaining": 1
