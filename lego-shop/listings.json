@@ -75,6 +75,19 @@
       "tags": ["ninjago", "skalidor"],
       "description": "Like new. No cracks or faded paint. Sealed in a small bag.",
       "remaining": 1
+    },
+    {
+      "id": "75203",
+      "name": "Star Wars: Hoth Medical Chamber",
+      "setNumber": "75203",
+      "category": "Set",
+      "condition": "New",
+      "availability": "in_stock",
+      "price": 103,
+      "images": [],
+      "tags": ["star wars", "hoth"],
+      "description": "Brand new and sealed. Box condition 10/10 (excellent).",
+      "remaining": 1
     }
   ]
 }
