@@ -124,6 +124,19 @@
       "tags": ["star wars", "lando"],
       "description": "Assembled only, never played with. No cracks. Plate included. Sealed in a bag.",
       "remaining": 2
+    },
+    {
+      "id": "nex106",
+      "name": "Lego NEXO Knights - Clay Moorington (Stone Clay)",
+      "setNumber": "NEX106",
+      "category": "Minifigure",
+      "condition": "New",
+      "availability": "in_stock",
+      "price": 79,
+      "images": [],
+      "tags": ["nexo knights", "clay"],
+      "description": "Assembled only, never played with. No cracks. Plate included. Sealed in a bag.",
+      "remaining": 1
     }
   ]
 }
