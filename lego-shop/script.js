@@ -32,7 +32,9 @@ function norm(s){
 }
 
 function toNumberOrNull(v){
-  const n = Number(String(v ?? "").replace(/[^0-9.]/g, ""));
+  const raw = String(v ?? "").replace(/[^0-9.]/g, "").trim();
+  if(!raw) return null;
+  const n = Number(raw);
   return Number.isFinite(n) ? n : null;
 }
 
