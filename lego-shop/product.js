@@ -74,16 +74,66 @@ function setGallery(item, initialIndex=0){
 
   const main = $('pImg');
   const thumbs = $('pThumbs');
+  const prev = $('gPrev');
+  const next = $('gNext');
+  const count = $('gCount');
+
+  let idx = Math.max(0, Math.min(initialIndex, Math.max(0, imgs.length-1)));
 
   const show = (i)=>{
-    const url = imgs[i] || primaryImage(item) || '';
+    if(!imgs.length){
+      main.removeAttribute('src');
+      main.alt = safeText(item.name);
+      if(count) count.textContent = '';
+      return;
+    }
+    idx = (i + imgs.length) % imgs.length;
+    const url = imgs[idx] || primaryImage(item) || '';
     main.src = url;
     main.alt = safeText(item.name);
-    thumbs.querySelectorAll('button').forEach((b,idx)=> b.setAttribute('aria-current', idx===i ? 'true' : 'false'));
+    thumbs.querySelectorAll('button').forEach((b, j)=> b.setAttribute('aria-current', j===idx ? 'true' : 'false'));
+    if(count) count.textContent = `${idx+1}/${imgs.length}`;
   };
 
   thumbs.innerHTML = '';
-  if(imgs.length <= 1){
+
+  const hasMany = imgs.length > 1;
+  if(prev) prev.style.display = hasMany ? '' : 'none';
+  if(next) next.style.display = hasMany ? '' : 'none';
+  if(count) count.style.display = imgs.length ? '' : 'none';
+
+  if(prev) prev.onclick = ()=> show(idx - 1);
+  if(next) next.onclick = ()=> show(idx + 1);
+
+  // swipe (touch) + click-to-advance
+  let startX = null;
+  main.addEventListener('click', ()=>{ if(hasMany) show(idx + 1); });
+  main.addEventListener('touchstart', (e)=>{
+    if(!hasMany) return;
+    const t = e.touches && e.touches[0];
+    startX = t ? t.clientX : null;
+  }, {passive:true});
+  main.addEventListener('touchend', (e)=>{
+    if(!hasMany) return;
+    if(startX == null) return;
+    const t = e.changedTouches && e.changedTouches[0];
+    const endX = t ? t.clientX : null;
+    if(endX == null) return;
+    const dx = endX - startX;
+    startX = null;
+    if(Math.abs(dx) < 40) return;
+    if(dx < 0) show(idx + 1);
+    else show(idx - 1);
+  }, {passive:true});
+
+  // keyboard
+  window.addEventListener('keydown', (e)=>{
+    if(!hasMany) return;
+    if(e.key === 'ArrowLeft') show(idx - 1);
+    if(e.key === 'ArrowRight') show(idx + 1);
+  });
+
+  if(!hasMany){
     show(0);
     return;
   }
@@ -97,7 +147,7 @@ function setGallery(item, initialIndex=0){
     thumbs.appendChild(b);
   });
 
-  show(Math.max(0, Math.min(initialIndex, imgs.length-1)));
+  show(idx);
 }
 
 function buildBackLink(){

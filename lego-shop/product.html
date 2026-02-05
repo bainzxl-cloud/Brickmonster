@@ -30,7 +30,12 @@
     <section id="product" class="product" aria-label="Product detail" hidden>
       <div class="product__content">
         <div class="gallery">
-          <img id="pImg" class="gallery__main" alt="" />
+          <div class="gallery__stage">
+            <img id="pImg" class="gallery__main" alt="" />
+            <button id="gPrev" class="gallery__nav gallery__nav--prev" type="button" aria-label="Previous image">‹</button>
+            <button id="gNext" class="gallery__nav gallery__nav--next" type="button" aria-label="Next image">›</button>
+            <div id="gCount" class="gallery__count" aria-label="Image counter"></div>
+          </div>
           <div id="pThumbs" class="gallery__thumbs" aria-label="Images"></div>
         </div>
 
