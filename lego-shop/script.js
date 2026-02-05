@@ -236,7 +236,7 @@ function render(items, state){
   if(sort === 'price_desc') out.sort((a,b)=>(b.price??-1)-(a.price??-1));
   if(sort === 'newest') out.sort((a,b)=> new Date(b.addedAt||0) - new Date(a.addedAt||0));
 
-  $('stats').textContent = `${out.length} product${out.length===1?'':'s'} shown`;
+  $('stats').textContent = `${out.length} product${out.length===1?'':'s'} shown • ${items.length} total`;
   renderActiveFilters(state);
 
   const grid = $('grid');
