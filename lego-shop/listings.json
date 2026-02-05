@@ -9,52 +9,6 @@
   },
   "items": [
     {
-      "id": "10283",
-      "name": "NASA Space Shuttle Discovery",
-      "setNumber": "10283",
-      "category": "Icons",
-      "condition": "Sealed",
-      "availability": "in_stock",
-      "price": 240,
-      "addedAt": "2026-02-04",
-      "images": [
-        "https://images.unsplash.com/photo-1628277610521-7e2c8e85f0a3?auto=format&fit=crop&w=1400&q=60",
-        "https://images.unsplash.com/photo-1603314585442-ee3b3c16fbcf?auto=format&fit=crop&w=1400&q=60"
-      ],
-      "tags": ["nasa", "space", "shuttle"],
-      "description": "Brand new sealed. Pickup downtown Toronto."
-    },
-    {
-      "id": "75355",
-      "name": "X-Wing Starfighter",
-      "setNumber": "75355",
-      "category": "Star Wars",
-      "condition": "Built (complete)",
-      "availability": "reserved",
-      "price": 150,
-      "addedAt": "2026-02-02",
-      "images": [
-        "https://images.unsplash.com/photo-1518336380282-98f24b190cbb?auto=format&fit=crop&w=1400&q=60"
-      ],
-      "tags": ["x-wing", "ucs"],
-      "description": "Built once, displayed. Includes minifigs + instructions."
-    },
-    {
-      "id": "21058",
-      "name": "Great Pyramid of Giza",
-      "setNumber": "21058",
-      "category": "Architecture",
-      "condition": "Open box",
-      "availability": "out_of_stock",
-      "price": 0,
-      "addedAt": "2026-01-31",
-      "images": [
-        "https://images.unsplash.com/photo-1580615546478-57a37dfca83f?auto=format&fit=crop&w=1400&q=60"
-      ],
-      "tags": ["pyramid"],
-      "description": "Out of stock (sold)."
-    },
-    {
       "id": "lor139",
       "name": "Lego LOR139 — Lord of the Rings (Sauron)",
       "setNumber": "LOR139",
