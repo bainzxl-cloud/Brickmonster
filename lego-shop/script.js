@@ -9,6 +9,7 @@ const CONFIG = {
   siteTitle: "LEGO for Sale",
   pickupLocation: "",
   shippingNote: "",
+  showOutOfStock: false,
 };
 
 const $ = (id) => document.getElementById(id);
@@ -215,6 +216,7 @@ function render(items, state){
   const sort = state.sort;
 
   let out = items.filter(x=>{
+    if(!CONFIG.showOutOfStock && (x.availability||'in_stock') === 'out_of_stock') return false;
     if(category && x.category !== category) return false;
     if(condition && x.condition !== condition) return false;
     if(availability && (x.availability||'in_stock') !== availability) return false;
