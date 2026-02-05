@@ -57,6 +57,19 @@
       "tags": ["ninjago", "pythor"],
       "description": "Like new. No cracks or faded paint. Comes with weapon (as shown in picture). Sealed in a small bag.",
       "remaining": 1
+    },
+    {
+      "id": "njo0067",
+      "name": "Lego Ninjago Skalidor",
+      "setNumber": "NJO0067",
+      "category": "Minifigure",
+      "condition": "Used",
+      "availability": "in_stock",
+      "price": 30,
+      "images": [],
+      "tags": ["ninjago", "skalidor"],
+      "description": "Like new. No cracks or faded paint. Sealed in a small bag.",
+      "remaining": 1
     }
   ]
 }
