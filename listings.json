@@ -216,6 +216,21 @@
       "tags": ["star wars", "taun we"],
       "description": "Assembled only, never played with. No cracks. Weapon included. Sealed in a bag.",
       "remaining": 1
+    },
+    {
+      "id": "loc097",
+      "name": "Lego Legends of Chima - Lagravis - Fire Chi",
+      "setNumber": "LOC097",
+      "category": "Minifigure",
+      "condition": "New",
+      "availability": "in_stock",
+      "price": 10,
+      "images": [
+        "assets/loc097-1.jpg"
+      ],
+      "tags": ["legends of chima", "lagravis"],
+      "description": "Assembled only, never played with. No cracks. Weapon included. Sealed in a bag.",
+      "remaining": 1
     }
   ]
 }
