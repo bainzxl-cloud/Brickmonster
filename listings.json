@@ -263,6 +263,23 @@
       "tags": ["nexo knights", "gargoyle"],
       "description": "No cracks. Assembled only, never played with. Weapon included. Sealed in a bag.",
       "remaining": 1
+    },
+    {
+      "id": "sw1152",
+      "name": "Lego Star Wars - Clone Commando Commander Crosshair, Imperial Elite squad",
+      "setNumber": "SW1152",
+      "category": "Minifigure",
+      "condition": "New",
+      "availability": "in_stock",
+      "price": 36,
+      "images": [
+        "assets/sw1152-1.jpg",
+        "assets/sw1152-2.jpg",
+        "assets/sw1152-3.png"
+      ],
+      "tags": ["star wars", "crosshair"],
+      "description": "Assembled only, never played with. Weapon included. Sealed in a bag.",
+      "remaining": 1
     }
   ]
 }
