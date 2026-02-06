@@ -119,19 +119,12 @@ function buildSelectOptions(selectEl, values, placeholder){
 
 function parseStateFromUrl(){
   const u = new URL(location.href);
-  const tagsRaw = u.searchParams.get('tags') || "";
-  const tags = tagsRaw
-    .split(',')
-    .map(s=>decodeURIComponent(s).trim())
-    .filter(Boolean);
-
   const s = {
     q: u.searchParams.get('q') || "",
     category: u.searchParams.get('category') || "",
     condition: u.searchParams.get('condition') || "",
-    availability: u.searchParams.get('availability') || "",
+    series: u.searchParams.get('series') || "",
     inStockOnly: (u.searchParams.get('inStock') || "") === '1',
-    tags,
     priceMin: u.searchParams.get('min') || "",
     priceMax: u.searchParams.get('max') || "",
     sort: u.searchParams.get('sort') || "newest",
@@ -149,11 +142,8 @@ function writeStateToUrl(state, {replace=false}={}){
   setOrDel('q', state.q);
   setOrDel('category', state.category);
   setOrDel('condition', state.condition);
-  setOrDel('availability', state.availability);
+  setOrDel('series', state.series);
   setOrDel('inStock', state.inStockOnly ? '1' : '');
-
-  const tags = Array.isArray(state.tags) ? state.tags.filter(Boolean) : [];
-  setOrDel('tags', tags.length ? tags.map(t=>encodeURIComponent(t)).join(',') : '');
 
   setOrDel('min', state.priceMin);
   setOrDel('max', state.priceMax);
@@ -169,9 +159,8 @@ function getUiState(){
     q: $('q').value.trim(),
     category: $('category').value,
     condition: $('condition').value,
-    availability: $('availability').value,
+    series: $('series')?.value || "",
     inStockOnly: $('inStockOnly')?.checked || false,
-    tags: SELECTED_TAGS.slice(),
     priceMin: $('priceMin').value.trim(),
     priceMax: $('priceMax').value.trim(),
     sort: $('sort').value,
@@ -183,10 +172,8 @@ function setUiState(s){
   $('q').value = s.q || "";
   $('category').value = s.category || "";
   $('condition').value = s.condition || "";
-  $('availability').value = s.availability || "";
+  if($('series')) $('series').value = s.series || "";
   if($('inStockOnly')) $('inStockOnly').checked = !!s.inStockOnly;
-  SELECTED_TAGS = Array.isArray(s.tags) ? s.tags.filter(Boolean) : [];
-  renderTagChips();
   $('priceMin').value = s.priceMin || "";
   $('priceMax').value = s.priceMax || "";
   $('sort').value = s.sort || "newest";
@@ -197,9 +184,8 @@ function renderActiveFilters(state){
   if(state.q) chips.push({k:'q', label:`Search: ${state.q}`});
   if(state.category) chips.push({k:'category', label:`Category: ${state.category}`});
   if(state.condition) chips.push({k:'condition', label:`Condition: ${state.condition}`});
-  if(state.availability) chips.push({k:'availability', label:`Availability: ${state.availability.replace(/_/g,' ')}`});
+  if(state.series) chips.push({k:'series', label:`Series: ${state.series}`});
   if(state.inStockOnly) chips.push({k:'inStock', label:`In stock only`});
-  if(state.tags && state.tags.length) chips.push({k:'tags', label:`Tags: ${state.tags.join(', ')}`});
   if(state.priceMin) chips.push({k:'min', label:`Min: ${state.priceMin}`});
   if(state.priceMax) chips.push({k:'max', label:`Max: ${state.priceMax}`});
 
@@ -214,9 +200,8 @@ function renderActiveFilters(state){
       if(k==='q') $('q').value = "";
       if(k==='category') $('category').value = "";
       if(k==='condition') $('condition').value = "";
-      if(k==='availability') $('availability').value = "";
+      if(k==='series') $('series').value = "";
       if(k==='inStock') $('inStockOnly').checked = false;
-      if(k==='tags') { SELECTED_TAGS = []; renderTagChips(); }
       if(k==='min') $('priceMin').value = "";
       if(k==='max') $('priceMax').value = "";
       scheduleRender();
@@ -225,36 +210,33 @@ function renderActiveFilters(state){
 }
 
 let ITEMS = [];
-let ALL_TAGS = [];
-let SELECTED_TAGS = [];
 let RENDER_TIMER = null;
 
-function renderTagChips(){
-  const wrap = $('tagChips');
-  if(!wrap) return;
-  if(!ALL_TAGS.length){
-    wrap.innerHTML = '<span class="muted">No tags yet.</span>';
-    return;
+const SERIES_OPTIONS = [
+  { value: 'star wars', label: 'Star Wars' },
+  { value: 'ninjago', label: 'Ninjago' },
+  { value: 'legends of chima', label: 'Legends of Chima' },
+  { value: 'nexo knights', label: 'NEXO Knights' },
+  { value: 'dreamzzz', label: 'DreamZzz' },
+  { value: 'lord of the rings', label: 'Lord of the Rings' },
+];
+
+function buildSeriesOptions(selectEl, items){
+  const present = new Set(items.flatMap(x=> (x.tags||[]).map(t=>norm(t))));
+  const opts = SERIES_OPTIONS.filter(o=> present.has(o.value));
+
+  selectEl.innerHTML = '';
+  const def = document.createElement('option');
+  def.value = '';
+  def.textContent = 'All series';
+  selectEl.appendChild(def);
+
+  for(const o of opts){
+    const opt = document.createElement('option');
+    opt.value = o.value;
+    opt.textContent = o.label;
+    selectEl.appendChild(opt);
   }
-
-  wrap.innerHTML = ALL_TAGS.map(t=>{
-    const pressed = SELECTED_TAGS.includes(t);
-    return `<span class="chip" role="button" tabindex="0" aria-pressed="${pressed}" data-tag="${escapeHtml(t)}">${escapeHtml(t)}</span>`;
-  }).join('');
-
-  wrap.querySelectorAll('[data-tag]').forEach(el=>{
-    const tag = el.getAttribute('data-tag');
-    const toggle = ()=>{
-      if(SELECTED_TAGS.includes(tag)) SELECTED_TAGS = SELECTED_TAGS.filter(x=>x!==tag);
-      else SELECTED_TAGS = [...SELECTED_TAGS, tag];
-      renderTagChips();
-      scheduleRender();
-    };
-    el.addEventListener('click', toggle);
-    el.addEventListener('keydown', (e)=>{
-      if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
-    });
-  });
 }
 
 function scheduleRender(){
@@ -277,8 +259,8 @@ function render(items, state){
   const q = norm(state.q);
   const category = state.category;
   const condition = state.condition;
-  const availability = state.inStockOnly ? 'in_stock' : state.availability;
-  const tags = Array.isArray(state.tags) ? state.tags : [];
+  const availability = state.inStockOnly ? 'in_stock' : '';
+  const series = norm(state.series || '');
   const min = toNumberOrNull(state.priceMin);
   const max = toNumberOrNull(state.priceMax);
   const sort = state.sort;
@@ -289,13 +271,18 @@ function render(items, state){
     if(condition && x.condition !== condition) return false;
     if(availability && (x.availability||'in_stock') !== availability) return false;
 
+    if(series){
+      const itemTags = (x.tags||[]).map(t=>norm(t));
+      if(!itemTags.includes(series)) return false;
+    }
+
     const price = Number(x.price);
     if(min != null && Number.isFinite(price) && price < min) return false;
     if(max != null && Number.isFinite(price) && price > max) return false;
     // if no price, still show (unless min/max set)
     if((min != null || max != null) && !Number.isFinite(price)) return false;
 
-    if(tags.length){
+    if(false){
       const itemTags = (x.tags||[]).map(t=>norm(t));
       const want = tags.map(t=>norm(t));
       // OR match: if any selected tag matches
@@ -387,15 +374,13 @@ async function init(){
 
   buildSelectOptions($('category'), ITEMS.map(x=>x.category), 'All categories');
   buildSelectOptions($('condition'), ITEMS.map(x=>x.condition), 'Any');
-
-  ALL_TAGS = uniqSorted(ITEMS.flatMap(x=> (x.tags||[]).map(t=>safeText(t).trim())).filter(Boolean));
+  if($('series')) buildSeriesOptions($('series'), ITEMS);
 
   const urlState = parseStateFromUrl();
   setUiState(urlState);
-  renderTagChips();
 
   // event wiring
-  ['q','category','condition','availability','priceMin','priceMax','sort','inStockOnly'].forEach(id=>{
+  ['q','category','condition','series','priceMin','priceMax','sort','inStockOnly'].forEach(id=>{
     const el = $(id);
     if(!el) return;
     el.addEventListener('input', scheduleRender);
@@ -403,7 +388,7 @@ async function init(){
   });
 
   $('clear').addEventListener('click', ()=>{
-    setUiState({q:'',category:'',condition:'',availability:'',inStockOnly:false,tags:[],priceMin:'',priceMax:'',sort:'newest'});
+    setUiState({q:'',category:'',condition:'',series:'',inStockOnly:false,priceMin:'',priceMax:'',sort:'newest'});
     scheduleRender();
   });
 
