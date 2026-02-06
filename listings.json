@@ -139,6 +139,22 @@
       "tags": ["nexo knights", "clay"],
       "description": "Assembled only, never played with. No cracks. Weapon included. Sealed in a bag.",
       "remaining": 1
+    },
+    {
+      "id": "sw0791",
+      "name": "Lego Star Wars - Jyn Erso",
+      "setNumber": "SW0791",
+      "category": "Minifigure",
+      "condition": "New",
+      "availability": "in_stock",
+      "price": 79,
+      "images": [
+        "assets/sw0791-1.jpg",
+        "assets/sw0791-2.png"
+      ],
+      "tags": ["star wars", "jyn erso"],
+      "description": "Assembled only, never played with. Weapon included (as shown on picture). Sealed in a bag.",
+      "remaining": 1
     }
   ]
 }
