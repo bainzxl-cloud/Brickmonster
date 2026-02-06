@@ -247,6 +247,22 @@
       "tags": ["star wars", "nien nunb"],
       "description": "Assembled only, never played with. Comes with stand. Sealed in a bag.",
       "remaining": 1
+    },
+    {
+      "id": "nex081",
+      "name": "Lego NEXO Knights - Gargoyle - Dark Purple Wings with Trans-Light Blue Membranes",
+      "setNumber": "NEX081",
+      "category": "Minifigure",
+      "condition": "New",
+      "availability": "in_stock",
+      "price": 40,
+      "images": [
+        "assets/nex081-1.jpg",
+        "assets/nex081-2.png"
+      ],
+      "tags": ["nexo knights", "gargoyle"],
+      "description": "No cracks. Assembled only, never played with. Weapon included. Sealed in a bag.",
+      "remaining": 1
     }
   ]
 }
