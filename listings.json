@@ -186,6 +186,21 @@
       "tags": ["star wars"],
       "description": "Assembled only, never played with. No cracks. Weapon included. Sealed in a bag.",
       "remaining": 1
+    },
+    {
+      "id": "sw0192",
+      "name": "Lego Star Wars",
+      "setNumber": "SW0192",
+      "category": "Minifigure",
+      "condition": "New",
+      "availability": "in_stock",
+      "price": 25,
+      "images": [
+        "assets/sw0192-1.jpg"
+      ],
+      "tags": ["star wars"],
+      "description": "Assembled only, never played with. No cracks. Weapon included. Sealed in a bag.",
+      "remaining": 1
     }
   ]
 }
