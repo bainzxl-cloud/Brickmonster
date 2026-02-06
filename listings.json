@@ -231,6 +231,22 @@
       "tags": ["legends of chima", "lagravis"],
       "description": "Assembled only, never played with. No cracks. Weapon included. Sealed in a bag.",
       "remaining": 1
+    },
+    {
+      "id": "sw1372",
+      "name": "Lego Star Wars - Nien Nunb",
+      "setNumber": "SW1372",
+      "category": "Minifigure",
+      "condition": "New",
+      "availability": "in_stock",
+      "price": 35,
+      "images": [
+        "assets/sw1372-1.jpg",
+        "assets/sw1372-2.png"
+      ],
+      "tags": ["star wars", "nien nunb"],
+      "description": "Assembled only, never played with. Comes with stand. Sealed in a bag.",
+      "remaining": 1
     }
   ]
 }
