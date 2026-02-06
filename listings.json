@@ -201,6 +201,21 @@
       "tags": ["star wars", "ahsoka tano"],
       "description": "Assembled only, never played with. No cracks. Weapon included. Sealed in a bag.",
       "remaining": 1
+    },
+    {
+      "id": "sw1216",
+      "name": "Lego Star Wars - Taun We",
+      "setNumber": "SW1216",
+      "category": "Minifigure",
+      "condition": "New",
+      "availability": "in_stock",
+      "price": 10,
+      "images": [
+        "assets/sw1216-1.png"
+      ],
+      "tags": ["star wars", "taun we"],
+      "description": "Assembled only, never played with. No cracks. Weapon included. Sealed in a bag.",
+      "remaining": 1
     }
   ]
 }
