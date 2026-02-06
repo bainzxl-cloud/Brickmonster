@@ -155,6 +155,22 @@
       "tags": ["star wars", "jyn erso"],
       "description": "Assembled only, never played with. Weapon included (as shown on picture). Sealed in a bag.",
       "remaining": 1
+    },
+    {
+      "id": "nex095",
+      "name": "Lego NEXO Knights",
+      "setNumber": "NEX095",
+      "category": "Minifigure",
+      "condition": "New",
+      "availability": "in_stock",
+      "price": 109,
+      "images": [
+        "assets/nex095-1.jpg",
+        "assets/nex095-2.jpg"
+      ],
+      "tags": ["nexo knights"],
+      "description": "Assembled only, never played with. No cracks. Sealed in a bag.",
+      "remaining": 1
     }
   ]
 }
