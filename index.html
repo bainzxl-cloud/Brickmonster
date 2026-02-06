@@ -76,9 +76,24 @@
           </select>
         </label>
 
+        <label class="field field--check" for="inStockOnly">
+          <span class="field__label">&nbsp;</span>
+          <span class="check">
+            <input id="inStockOnly" type="checkbox" />
+            <span>In stock only</span>
+          </span>
+        </label>
+
         <div class="field field--actions">
           <span class="field__label">&nbsp;</span>
           <button id="clear" class="btn btn--ghost" type="button">Clear</button>
+        </div>
+      </div>
+
+      <div class="controls__row controls__row--tags">
+        <div class="field" style="grid-column: 1 / -1;">
+          <span class="field__label">Quick tags</span>
+          <div id="tagChips" class="chips chips--picker" aria-label="Tag filters"></div>
         </div>
       </div>
     </section>

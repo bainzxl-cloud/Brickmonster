@@ -119,11 +119,19 @@ function buildSelectOptions(selectEl, values, placeholder){
 
 function parseStateFromUrl(){
   const u = new URL(location.href);
+  const tagsRaw = u.searchParams.get('tags') || "";
+  const tags = tagsRaw
+    .split(',')
+    .map(s=>decodeURIComponent(s).trim())
+    .filter(Boolean);
+
   const s = {
     q: u.searchParams.get('q') || "",
     category: u.searchParams.get('category') || "",
     condition: u.searchParams.get('condition') || "",
     availability: u.searchParams.get('availability') || "",
+    inStockOnly: (u.searchParams.get('inStock') || "") === '1',
+    tags,
     priceMin: u.searchParams.get('min') || "",
     priceMax: u.searchParams.get('max') || "",
     sort: u.searchParams.get('sort') || "newest",
@@ -142,6 +150,11 @@ function writeStateToUrl(state, {replace=false}={}){
   setOrDel('category', state.category);
   setOrDel('condition', state.condition);
   setOrDel('availability', state.availability);
+  setOrDel('inStock', state.inStockOnly ? '1' : '');
+
+  const tags = Array.isArray(state.tags) ? state.tags.filter(Boolean) : [];
+  setOrDel('tags', tags.length ? tags.map(t=>encodeURIComponent(t)).join(',') : '');
+
   setOrDel('min', state.priceMin);
   setOrDel('max', state.priceMax);
   setOrDel('sort', state.sort && state.sort !== 'newest' ? state.sort : "");
@@ -157,6 +170,8 @@ function getUiState(){
     category: $('category').value,
     condition: $('condition').value,
     availability: $('availability').value,
+    inStockOnly: $('inStockOnly')?.checked || false,
+    tags: SELECTED_TAGS.slice(),
     priceMin: $('priceMin').value.trim(),
     priceMax: $('priceMax').value.trim(),
     sort: $('sort').value,
@@ -169,6 +184,9 @@ function setUiState(s){
   $('category').value = s.category || "";
   $('condition').value = s.condition || "";
   $('availability').value = s.availability || "";
+  if($('inStockOnly')) $('inStockOnly').checked = !!s.inStockOnly;
+  SELECTED_TAGS = Array.isArray(s.tags) ? s.tags.filter(Boolean) : [];
+  renderTagChips();
   $('priceMin').value = s.priceMin || "";
   $('priceMax').value = s.priceMax || "";
   $('sort').value = s.sort || "newest";
@@ -180,6 +198,8 @@ function renderActiveFilters(state){
   if(state.category) chips.push({k:'category', label:`Category: ${state.category}`});
   if(state.condition) chips.push({k:'condition', label:`Condition: ${state.condition}`});
   if(state.availability) chips.push({k:'availability', label:`Availability: ${state.availability.replace(/_/g,' ')}`});
+  if(state.inStockOnly) chips.push({k:'inStock', label:`In stock only`});
+  if(state.tags && state.tags.length) chips.push({k:'tags', label:`Tags: ${state.tags.join(', ')}`});
   if(state.priceMin) chips.push({k:'min', label:`Min: ${state.priceMin}`});
   if(state.priceMax) chips.push({k:'max', label:`Max: ${state.priceMax}`});
 
@@ -195,6 +215,8 @@ function renderActiveFilters(state){
       if(k==='category') $('category').value = "";
       if(k==='condition') $('condition').value = "";
       if(k==='availability') $('availability').value = "";
+      if(k==='inStock') $('inStockOnly').checked = false;
+      if(k==='tags') { SELECTED_TAGS = []; renderTagChips(); }
       if(k==='min') $('priceMin').value = "";
       if(k==='max') $('priceMax').value = "";
       scheduleRender();
@@ -203,7 +225,37 @@ function renderActiveFilters(state){
 }
 
 let ITEMS = [];
+let ALL_TAGS = [];
+let SELECTED_TAGS = [];
 let RENDER_TIMER = null;
+
+function renderTagChips(){
+  const wrap = $('tagChips');
+  if(!wrap) return;
+  if(!ALL_TAGS.length){
+    wrap.innerHTML = '<span class="muted">No tags yet.</span>';
+    return;
+  }
+
+  wrap.innerHTML = ALL_TAGS.map(t=>{
+    const pressed = SELECTED_TAGS.includes(t);
+    return `<span class="chip" role="button" tabindex="0" aria-pressed="${pressed}" data-tag="${escapeHtml(t)}">${escapeHtml(t)}</span>`;
+  }).join('');
+
+  wrap.querySelectorAll('[data-tag]').forEach(el=>{
+    const tag = el.getAttribute('data-tag');
+    const toggle = ()=>{
+      if(SELECTED_TAGS.includes(tag)) SELECTED_TAGS = SELECTED_TAGS.filter(x=>x!==tag);
+      else SELECTED_TAGS = [...SELECTED_TAGS, tag];
+      renderTagChips();
+      scheduleRender();
+    };
+    el.addEventListener('click', toggle);
+    el.addEventListener('keydown', (e)=>{
+      if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
+  });
+}
 
 function scheduleRender(){
   window.clearTimeout(RENDER_TIMER);
@@ -225,7 +277,8 @@ function render(items, state){
   const q = norm(state.q);
   const category = state.category;
   const condition = state.condition;
-  const availability = state.availability;
+  const availability = state.inStockOnly ? 'in_stock' : state.availability;
+  const tags = Array.isArray(state.tags) ? state.tags : [];
   const min = toNumberOrNull(state.priceMin);
   const max = toNumberOrNull(state.priceMax);
   const sort = state.sort;
@@ -241,6 +294,14 @@ function render(items, state){
     if(max != null && Number.isFinite(price) && price > max) return false;
     // if no price, still show (unless min/max set)
     if((min != null || max != null) && !Number.isFinite(price)) return false;
+
+    if(tags.length){
+      const itemTags = (x.tags||[]).map(t=>norm(t));
+      const want = tags.map(t=>norm(t));
+      // OR match: if any selected tag matches
+      const ok = want.some(t=> itemTags.includes(t));
+      if(!ok) return false;
+    }
 
     if(q){
       const blob = `${x.name||''} ${x.setNumber||''} ${x.category||''} ${(x.tags||[]).join(' ')} ${x.condition||''}`.toLowerCase();
@@ -327,17 +388,22 @@ async function init(){
   buildSelectOptions($('category'), ITEMS.map(x=>x.category), 'All categories');
   buildSelectOptions($('condition'), ITEMS.map(x=>x.condition), 'Any');
 
+  ALL_TAGS = uniqSorted(ITEMS.flatMap(x=> (x.tags||[]).map(t=>safeText(t).trim())).filter(Boolean));
+
   const urlState = parseStateFromUrl();
   setUiState(urlState);
+  renderTagChips();
 
   // event wiring
-  ['q','category','condition','availability','priceMin','priceMax','sort'].forEach(id=>{
-    $(id).addEventListener('input', scheduleRender);
-    $(id).addEventListener('change', scheduleRender);
+  ['q','category','condition','availability','priceMin','priceMax','sort','inStockOnly'].forEach(id=>{
+    const el = $(id);
+    if(!el) return;
+    el.addEventListener('input', scheduleRender);
+    el.addEventListener('change', scheduleRender);
   });
 
   $('clear').addEventListener('click', ()=>{
-    setUiState({q:'',category:'',condition:'',availability:'',priceMin:'',priceMax:'',sort:'newest'});
+    setUiState({q:'',category:'',condition:'',availability:'',inStockOnly:false,tags:[],priceMin:'',priceMax:'',sort:'newest'});
     scheduleRender();
   });
 

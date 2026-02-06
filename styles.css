@@ -37,7 +37,14 @@ body{
 
 .controls{margin:18px 0}
 .controls__row{display:grid;grid-template-columns: 1.4fr 1fr 1fr 1fr;gap:10px}
-.controls__row--2{grid-template-columns: .7fr .7fr 1fr auto;margin-top:10px}
+.controls__row--2{grid-template-columns: .7fr .7fr 1fr auto auto;margin-top:10px}
+.controls__row--tags{grid-template-columns: 1fr; margin-top:10px}
+.field--check{justify-content:flex-end}
+.check{display:flex;gap:10px;align-items:center;height:42px;padding:0 10px;border:1px solid var(--border);border-radius:12px;background: rgba(255,255,255,.02)}
+.check input{width:16px;height:16px;accent-color: var(--accent)}
+
+.chips--picker .chip{cursor:pointer;user-select:none}
+.chips--picker .chip[aria-pressed="true"]{border-color: rgba(255,77,141,.55); box-shadow: 0 0 0 4px rgba(255,77,141,.10)}
 
 .field{display:flex;flex-direction:column;gap:6px;min-width:0}
 .field__label{font-size:12px;color:var(--muted)}
