@@ -158,7 +158,7 @@
     },
     {
       "id": "nex095",
-      "name": "Lego NEXO Knights",
+      "name": "Lego NEXO Knights - General Garg",
       "setNumber": "NEX095",
       "category": "Minifigure",
       "condition": "New",
@@ -168,7 +168,7 @@
         "assets/nex095-1.jpg",
         "assets/nex095-2.jpg"
       ],
-      "tags": ["nexo knights"],
+      "tags": ["nexo knights", "general garg"],
       "description": "Assembled only, never played with. No cracks. Sealed in a bag.",
       "remaining": 1
     }
