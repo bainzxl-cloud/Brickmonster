@@ -6,9 +6,12 @@ param(
   [int]$Seed = -1,
   [int]$Steps = 6,
   [double]$Cfg = 2,
-  # Output size (final). For RTX 4050 6GB, we generate smaller internally then upscale to this size.
+  # Output size (final).
   [int]$Width = 2560,
   [int]$Height = 1560,
+  # Internal generation size (VRAM-heavy). If set, ComfyUI generates at this size, then we optionally resize to Width/Height.
+  [int]$GenWidth = 768,
+  [int]$GenHeight = 768,
   [string]$OutDir = "C:\Users\bainz\clawd\outputs\comfyui",
   [int]$TimeoutSec = 180,
   [string]$Prefix = "asa"
@@ -57,9 +60,9 @@ if($Seed -ge 0){
   $wf.'3'.inputs.seed = Get-Random -Minimum 1 -Maximum 2147483646
 }
 
-# Generate smaller for VRAM safety, then upscale to requested output size.
-$genW = 768
-$genH = 768
+# Internal generation resolution
+$genW = $GenWidth
+$genH = $GenHeight
 $wf.'5'.inputs.width = $genW
 $wf.'5'.inputs.height = $genH
 $wf.'9'.inputs.filename_prefix = $Prefix
