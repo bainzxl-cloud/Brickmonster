@@ -7,8 +7,8 @@ param(
   [int]$Steps = 6,
   [double]$Cfg = 2,
   # Output size (final). For RTX 4050 6GB, we generate smaller internally then upscale to this size.
-  [int]$Width = 1080,
-  [int]$Height = 1080,
+  [int]$Width = 2560,
+  [int]$Height = 1560,
   [string]$OutDir = "C:\Users\bainz\clawd\outputs\comfyui",
   [int]$TimeoutSec = 180,
   [string]$Prefix = "asa"
