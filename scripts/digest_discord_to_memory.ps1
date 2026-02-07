@@ -72,8 +72,12 @@ $errText = $null
 $job = Start-Job -ScriptBlock {
   param($bodyJson, $timeoutSec)
   $ErrorActionPreference = 'Stop'
-  $r = Invoke-RestMethod -Method Post -Uri 'http://127.0.0.1:11434/api/chat' -ContentType 'application/json' -Body $bodyJson -TimeoutSec $timeoutSec
-  return ($r.message.content + '').Trim()
+  # gpt-oss:20b has been observed to 500 on /api/chat; /api/generate is more stable.
+  $payload = $bodyJson | ConvertFrom-Json
+  $prompt = ($payload.messages | ForEach-Object { ($_.role + ': ' + $_.content) }) -join "`n"
+  $genBody = @{ model = $payload.model; prompt = $prompt; stream = $false; options = $payload.options } | ConvertTo-Json -Depth 8
+  $r = Invoke-RestMethod -Method Post -Uri 'http://127.0.0.1:11434/api/generate' -ContentType 'application/json' -Body $genBody -TimeoutSec $timeoutSec
+  return ($r.response + '').Trim()
 } -ArgumentList $body, $OllamaTimeoutSec
 
 $completed = Wait-Job -Job $job -Timeout $TotalTimeoutSec
