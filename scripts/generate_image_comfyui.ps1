@@ -10,8 +10,8 @@ param(
   [int]$Width = 2560,
   [int]$Height = 1560,
   # Internal generation size (VRAM-heavy). If set, ComfyUI generates at this size, then we optionally resize to Width/Height.
-  [int]$GenWidth = 768,
-  [int]$GenHeight = 768,
+  [int]$GenWidth = 1080,
+  [int]$GenHeight = 1080,
   [string]$OutDir = "C:\Users\bainz\clawd\outputs\comfyui",
   [int]$TimeoutSec = 180,
   [string]$Prefix = "asa"
