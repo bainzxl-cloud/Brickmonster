@@ -106,6 +106,22 @@
       "tags": ["dreamzzz", "nightmare king"],
       "description": "Assembled only, never played with. Comes with both weapons (as shown in the picture). Sealed in a bag.",
       "remaining": 1
+    },
+    {
+      "id": "nex097",
+      "name": "Lego NEXO Knights - Harpy",
+      "setNumber": "NEX097",
+      "category": "Minifigure",
+      "condition": "Used",
+      "availability": "in_stock",
+      "price": 35,
+      "images": [
+        "assets/nex097-1.jpg",
+        "assets/nex097-2.png"
+      ],
+      "tags": ["nexo knights", "harpy"],
+      "description": "Assembled and sealed in a bag. No cracks.",
+      "remaining": 1
     }
   ]
 }
