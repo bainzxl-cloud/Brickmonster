@@ -296,6 +296,22 @@
       "tags": ["star wars", "republic gunship"],
       "description": "Sealed box. Has some shelfware. Box condition 7/10.",
       "remaining": 1
+    },
+    {
+      "id": "nex097",
+      "name": "Lego NEXO Knights - Harpy",
+      "setNumber": "NEX097",
+      "category": "Minifigure",
+      "condition": "Used",
+      "availability": "in_stock",
+      "price": 35,
+      "images": [
+        "assets/nex097-1.jpg",
+        "assets/nex097-2.png"
+      ],
+      "tags": ["nexo knights", "harpy"],
+      "description": "Assembled and sealed in a bag. No cracks.",
+      "remaining": 1
     }
   ]
 }
