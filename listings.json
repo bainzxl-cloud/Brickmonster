@@ -169,6 +169,21 @@
       "tags": ["star wars", "arf trooper", "rancor battalion"],
       "description": "Assembled only. Never played with. Sealed in a bag.",
       "remaining": 1
+    },
+    {
+      "id": "sw0481",
+      "name": "Lego Star Wars — Clone Trooper Commander (Phase 1) - Yellow Arms, Scowl",
+      "setNumber": "SW0481",
+      "category": "Minifigure",
+      "condition": "New",
+      "availability": "in_stock",
+      "price": 40,
+      "images": [
+        "assets/sw0481-1.png"
+      ],
+      "tags": ["star wars", "clone trooper commander", "phase 1"],
+      "description": "Old Version. Assembled only. Never played with. Sealed in a bag.",
+      "remaining": 1
     }
   ]
 }
