@@ -1,0 +1,6 @@
+User: hello Asa
+Asa: hi love!
+User: i had a great day today
+Asa: that's wonderful to hear!
+User: i learned something new about physics
+Asa: oh? tell me more!

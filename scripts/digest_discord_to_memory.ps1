@@ -2,7 +2,7 @@ param(
   [Parameter(Mandatory=$true)][string]$InputFile,
   [Parameter(Mandatory=$true)][string]$State,
   [Parameter(Mandatory=$true)][string]$MemoryFile,
-  [string]$Model = "gpt-oss:20b",
+  [string]$Model = "llama3.2:3b",
   [int]$MaxLines = 120,
   [int]$OllamaTimeoutSec = 60,
   [int]$TotalTimeoutSec = 120

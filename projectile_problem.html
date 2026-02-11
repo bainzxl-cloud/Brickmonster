@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Projectile Motion Solution</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Times New Roman', serif; max-width: 800px; margin: 40px auto; padding: 20px; line-height: 1.6; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #34495e; margin-top: 30px; }
+        .equation { background: #f8f9fa; padding: 15px; margin: 15px 0; border-left: 4px solid #3498db; }
+        .result { background: #e8f6f3; padding: 20px; margin: 20px 0; border-radius: 5px; border: 2px solid #1abc9c; }
+        .result-box { font-size: 1.2em; font-weight: bold; text-align: center; margin: 10px 0; }
+        hr { border: 0; border-top: 1px solid #bdc3c7; margin: 30px 0; }
+        ul { padding-left: 20px; }
+        li { margin: 10px 0; }
+        .note { background: #fef9e7; padding: 15px; border-radius: 5px; border-left: 4px solid #f1c40f; margin: 20px 0; }
+    </style>
+</head>
+<body>
+
+<h1>Projectile Motion Problem</h1>
+
+<p><strong>Problem:</strong> A projectile is launched from ground level with initial speed \(v_0\) at an angle \(\theta\) above the horizontal. A vertical wall is located at a horizontal distance \(D\) from the launch point.</p>
+
+<p><strong>Find:</strong> The launch angle \(\theta\) that maximizes the height at which the projectile hits the wall, and the maximum height.</p>
+
+<hr>
+
+<h2>Solution</h2>
+
+<p>The equations of motion for projectile motion are:</p>
+
+<div class="equation">
+\[
+\begin{align}
+x(t) &= v_0 \cos\theta \cdot t \tag{1} \\
+y(t) &= v_0 \sin\theta \cdot t - \frac{1}{2}gt^2 \tag{2}
+\end{align}
+\]
+</div>
+
+<p>When the projectile hits the wall at \(x = D\), the time of flight is:</p>
+
+<div class="equation">
+\[
+\begin{align}
+D &= v_0 \cos\theta \cdot t \\
+t &= \frac{D}{v_0 \cos\theta} \tag{3}
+\end{align}
+\]
+</div>
+
+<p>Substitute equation (3) into equation (2) to find the height \(y\) as a function of \(\theta\):</p>
+
+<div class="equation">
+\[
+\begin{align}
+y(\theta) &= v_0 \sin\theta \left(\frac{D}{v_0 \cos\theta}\right) - \frac{1}{2}g\left(\frac{D}{v_0 \cos\theta}\right)^2 \\
+&= D \tan\theta - \frac{g D^2}{2 v_0^2 \cos^2\theta} \tag{4}
+\end{align}
+\]
+</div>
+
+<p>Using the trigonometric identity \(\frac{1}{\cos^2\theta} = 1 + \tan^2\theta\):</p>
+
+<div class="equation">
+\[
+\begin{align}
+y(\theta) &= D \tan\theta - \frac{g D^2}{2 v_0^2}(1 + \tan^2\theta) \tag{5}
+\end{align}
+\]
+</div>
+
+<p>Let \(u = \tan\theta\). Then:</p>
+
+<div class="equation">
+\[
+\begin{align}
+y(u) &= D u - \frac{g D^2}{2 v_0^2}(1 + u^2) \\
+&= -\frac{g D^2}{2 v_0^2}u^2 + D u - \frac{g D^2}{2 v_0^2} \tag{6}
+\end{align}
+\]
+</div>
+
+<p>This is a downward-opening parabola. The maximum occurs at the vertex:</p>
+
+<div class="equation">
+\[
+\begin{align}
+\frac{dy}{du} &= -\frac{g D^2}{v_0^2}u + D = 0 \\
+\frac{g D^2}{v_0^2}u &= D \\
+u &= \frac{v_0^2}{g D} \tag{7}
+\end{align}
+\]
+</div>
+
+<p>Therefore, the optimal angle is:</p>
+
+<div class="equation">
+\[
+\begin{align}
+\tan\theta &= \frac{v_0^2}{g D} \\
+\theta &= \arctan\left(\frac{v_0^2}{g D}\right) \tag{8}
+\end{align}
+\]
+</div>
+
+<p>Substitute back to find the maximum height:</p>
+
+<div class="equation">
+\[
+\begin{align}
+y_{\max} &= D\left(\frac{v_0^2}{g D}\right) - \frac{g D^2}{2 v_0^2}\left[1 + \left(\frac{v_0^2}{g D}\right)^2\right] \\
+&= \frac{v_0^2}{g} - \frac{g D^2}{2 v_0^2} - \frac{v_0^2}{2 g} \\
+&= \frac{v_0^2}{2 g} - \frac{g D^2}{2 v_0^2} \\
+&= \frac{v_0^4 - g^2 D^2}{2 g v_0^2} \tag{9}
+\end{align}
+\]
+</div>
+
+<hr>
+
+<h2>Final Results</h2>
+
+<div class="result">
+<ul>
+    <li><strong>Optimal launch angle:</strong><br>
+    <div class="result-box">\(\displaystyle \theta = \arctan\left(\frac{v_0^2}{g D}\right)\)</div>
+    </li>
+    
+    <li><strong>Maximum height at wall:</strong><br>
+    <div class="result-box">\(\displaystyle y_{\max} = \frac{v_0^4 - g^2 D^2}{2 g v_0^2}\)</div>
+    </li>
+</ul>
+</div>
+
+<div class="note">
+<strong>Note:</strong> This solution is valid for \(\frac{v_0^2}{g D} > 1\), which ensures the projectile reaches the wall before reaching its maximum range. If \(\frac{v_0^2}{g D} \leq 1\), the projectile cannot reach the wall.
+</div>
+
+</body>
+</html>

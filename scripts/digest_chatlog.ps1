@@ -87,7 +87,8 @@ $body = @{
   options = @{ temperature = 0.1 }
 } | ConvertTo-Json -Depth 8
 
-$resp = Invoke-RestMethod -Method Post -Uri 'http://localhost:11434/api/chat' -ContentType 'application/json' -Body $body
+# Use 127.0.0.1 instead of localhost to avoid IPv6 (::1) connection hangs on some Windows setups
+$resp = Invoke-RestMethod -Method Post -Uri 'http://127.0.0.1:11434/api/chat' -ContentType 'application/json' -Body $body
 $summary = ($resp.message.content + '').Trim()
 
 $now = (Get-Date).ToString('o')

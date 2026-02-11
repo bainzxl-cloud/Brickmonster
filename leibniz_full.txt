@@ -1,0 +1,1 @@
+\dfrac{d}{dx} \left[ \int_{a(x)}^{b(x)} f(t) dt \right] = f\left(b(x)\right) \cdot \dfrac{d}{dx}\left[b(x)\right] - f\left(a(x)\right) \cdot \dfrac{d}{dx}\left[a(x)\right]

@@ -1,0 +1,3 @@
+date,platform,region,currency,condition,metric_scope,count,min,median,max,notes,url
+2026-01-29,eBay,ebay.ca,CAD,both,sold/complete,114,23.16,92.58,745.62,"Extracted from eBay sold/complete search results text; includes mixed listings; shipping not included.","https://www.ebay.ca/sch/i.html?_nkw=LEGO+75157&LH_Sold=1&LH_Complete=1"
+2026-01-29,BrickLink,bricklink.com,CAD,both,sold/complete,,,,"Not captured yet (BrickLink price guide page needs interactive loading / anti-bot).","https://www.bricklink.com/v2/catalog/catalogitem.page?S=75157-1#T=P"

@@ -29,9 +29,36 @@ Before doing anything else, in this order:
 
 ### Session Startup Command (Quick Reference)
 ```bash
-# Quick memory load command for reference:
-# cat memory/(today).md memory/(yesterday).md MEMORY.md memory/topics/*.md .learnings/LEARNINGS.md
+# Option 1: Quick manual load
+cat memory/(today).md memory/(yesterday).md MEMORY.md memory/topics/*.md .learnings/LEARNINGS.md
+
+# Option 2: Use automated script (RECOMMENDED)
+pwsh scripts/load_memory.ps1    # Windows PowerShell
+# OR
+bash scripts/load_memory.sh     # Git Bash / WSL / Linux / Mac
 ```
+
+### ⚠️ CRITICAL: Always Load Memory at Session Start!
+**This is MANDATORY, not optional.**
+
+The agent MUST load these files at the start of EVERY session:
+1. `SOUL.md` - Your identity and backstory
+2. `USER.md` - User preferences and context
+3. `IDENTITY.md` - Quick reference card
+4. `memory/YYYY-MM-DD.md` - Today's and yesterday's logs
+5. `MEMORY.md` - Long-term curated memories
+6. `memory/topics/*.md` - Organized topic memories
+7. `.learnings/LEARNINGS.md` - Past learnings and corrections
+
+**Why it matters:**
+- Prevents forgetting important context
+- Maintains relationship continuity
+- Avoids repeating mistakes
+- Keeps personality consistent
+
+**If you forget:** The user will notice and correct you. Don't let that happen.
+
+**Use the startup script** (`scripts/load_memory.ps1` or `.sh`) to ensure consistency across all sessions.
 
 ### Why Load Everything?
 - Memory files are AI-summarized and concise

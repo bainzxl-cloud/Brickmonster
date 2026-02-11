@@ -1,0 +1,1 @@
+SELF-TEST ISSUE: eBay fetch blocked by anti-bot challenge (need interactive browsing/session); cron scheduler tool also unreachable (gateway WS timeout).

@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "lastRunIso": "2026-01-31T10:06:51.319Z",
+  "items": {
+    "_schema": {
+      "key": "ebayItemId (string)",
+      "fields": {
+        "lastSeenIso": "ISO string",
+        "keyword": "string",
+        "legoId": "string|null",
+        "ebayUrl": "string",
+        "lastComputedTotalCad": "number|null",
+        "lastReportedTotalCad": "number|null",
+        "lastReportedIso": "ISO string|null",
+        "bricklinkAvgCad": "number|null",
+        "notes": "string|null"
+      }
+    },
+    "123456789012": {
+      "ebayUrl": "https://www.ebay.ca/itm/123456789012",
+      "keyword": "TESTKEY",
+      "legoId": "TEST1234",
+      "lastSeenIso": "2026-01-31T01:30:14.434Z",
+      "lastComputedTotalCad": 110,
+      "lastReportedTotalCad": 110,
+      "lastReportedIso": "2026-01-31T01:30:14.434Z",
+      "bricklinkAvgCad": 999
+    }
+  }
+}

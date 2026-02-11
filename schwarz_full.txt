@@ -1,0 +1,1 @@
+\left(\int_{a}^{b} f(x) dx\right)^{2} \leq \left(\int_{a}^{b} f(x)^{2} dx\right) \cdot \left(\int_{a}^{b} g(x)^{2} dx\right)

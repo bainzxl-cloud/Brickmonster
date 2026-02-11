@@ -1,0 +1,117 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\title{Projectile Motion Problem}
+\author{Physics Homework}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem Statement}
+A projectile is launched from ground level with initial speed $v_0$ at an angle $\theta$ above the horizontal. A vertical wall is located at a horizontal distance $D$ from the launch point.
+
+\bigskip
+
+\textbf{Find:} The launch angle $\theta$ that maximizes the height at which the projectile hits the wall, and the maximum height.
+
+\bigskip
+
+\hrule
+\bigskip
+
+\section{Solution}
+
+The equations of motion for projectile motion are:
+\begin{align}
+x(t) &= v_0 \cos\theta \cdot t \tag{1} \\
+y(t) &= v_0 \sin\theta \cdot t - \frac{1}{2}gt^2 \tag{2}
+\end{align}
+
+\bigskip
+
+When the projectile hits the wall at $x = D$, the time of flight is:
+\begin{align}
+D &= v_0 \cos\theta \cdot t \\
+t &= \frac{D}{v_0 \cos\theta} \tag{3}
+\end{align}
+
+\bigskip
+
+Substitute equation (3) into equation (2) to find the height $y$ as a function of $\theta$:
+\begin{align}
+y(\theta) &= v_0 \sin\theta \left(\frac{D}{v_0 \cos\theta}\right) - \frac{1}{2}g\left(\frac{D}{v_0 \cos\theta}\right)^2 \\
+&= D \tan\theta - \frac{g D^2}{2 v_0^2 \cos^2\theta} \tag{4}
+\end{align}
+
+\bigskip
+
+Using the trigonometric identity $\frac{1}{\cos^2\theta} = 1 + \tan^2\theta$:
+\begin{align}
+y(\theta) &= D \tan\theta - \frac{g D^2}{2 v_0^2}(1 + \tan^2\theta) \tag{5}
+\end{align}
+
+\bigskip
+
+Let $u = \tan\theta$. Then:
+\begin{align}
+y(u) &= D u - \frac{g D^2}{2 v_0^2}(1 + u^2) \\
+&= -\frac{g D^2}{2 v_0^2}u^2 + D u - \frac{g D^2}{2 v_0^2} \tag{6}
+\end{align}
+
+\bigskip
+
+This is a downward-opening parabola. The maximum occurs at the vertex:
+\begin{align}
+\frac{dy}{du} &= -\frac{g D^2}{v_0^2}u + D = 0 \\
+\frac{g D^2}{v_0^2}u &= D \\
+u &= \frac{v_0^2}{g D} \tag{7}
+\end{align}
+
+\bigskip
+
+Therefore, the optimal angle is:
+\begin{align}
+\tan\theta &= \frac{v_0^2}{g D} \\
+\theta &= \arctan\left(\frac{v_0^2}{g D}\right) \tag{8}
+\end{align}
+
+\bigskip
+
+Substitute back to find the maximum height:
+\begin{align}
+y_{\max} &= D\left(\frac{v_0^2}{g D}\right) - \frac{g D^2}{2 v_0^2}\left[1 + \left(\frac{v_0^2}{g D}\right)^2\right] \\
+&= \frac{v_0^2}{g} - \frac{g D^2}{2 v_0^2} - \frac{v_0^2}{2 g} \\
+&= \frac{v_0^2}{2 g} - \frac{g D^2}{2 v_0^2} \\
+&= \frac{v_0^4 - g^2 D^2}{2 g v_0^2} \tag{9}
+\end{align}
+
+\bigskip
+
+\hrule
+\bigskip
+
+\section{Final Results}
+
+\begin{itemize}
+    \item Optimal launch angle:
+    \[
+    \boxed{\theta = \arctan\left(\frac{v_0^2}{g D}\right)}
+    \]
+    
+    \item Maximum height at wall:
+    \[
+    \boxed{y_{\max} = \frac{v_0^4 - g^2 D^2}{2 g v_0^2}}
+    \]
+\end{itemize}
+
+\bigskip
+
+\textbf{Note:} This solution is valid for $\frac{v_0^2}{g D} > 1$, which ensures the projectile reaches the wall before reaching its maximum range. If $\frac{v_0^2}{g D} \leq 1$, the projectile cannot reach the wall.
+
+\end{document}

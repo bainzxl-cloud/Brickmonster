@@ -1,0 +1,23 @@
+{
+  "guildId": "1466295537211805728",
+  "textChannelId": "1466296030181199933",
+  "voiceChannelId": "1469869755388268795",
+  "allowedUserId": "1156612896525131847",
+
+  "readAloudFromBotId": "1466291448319311932",
+
+  "whisperExe": "C:/Users/bainz/voice/whispercpp2/Release/whisper-cli.exe",
+  "whisperModel": "C:/Users/bainz/voice/models/ggml-small.en.bin",
+
+  "ffmpegExe": "ffmpeg",
+
+  "piperExe": "C:/Users/bainz/voice/piper/piper/piper.exe",
+  "piperModel": "C:/Users/bainz/voice/voices/en_GB-cori-high/en_GB-cori-high.onnx",
+  "piperConfig": "C:/Users/bainz/voice/voices/en_GB-cori-high/en_GB-cori-high.onnx.json",
+
+  "silenceMs": 1200,
+  "maxRecordMs": 15000,
+
+  "voiceSentenceLimit": 2,
+  "maxTtsChars": 260
+}
