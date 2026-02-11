@@ -199,6 +199,21 @@
       "tags": ["star wars", "clone trooper", "phase 2", "geonosis"],
       "description": "Assembled only. Never played with. Sealed in a bag.",
       "remaining": 1
+    },
+    {
+      "id": "sw0605",
+      "name": "Lego Star Wars — Clone Airborne Trooper (Phase 2) - Geonosis Camouflage, Smirk",
+      "setNumber": "SW0605",
+      "category": "Minifigure",
+      "condition": "New",
+      "availability": "in_stock",
+      "price": 18,
+      "images": [
+        "assets/sw0605-1.jpg"
+      ],
+      "tags": ["star wars", "clone airborne trooper", "phase 2", "geonosis"],
+      "description": "Assembled only. Never played with. Sealed in a bag.",
+      "remaining": 1
     }
   ]
 }
