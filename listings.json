@@ -138,6 +138,22 @@
       "tags": ["star wars", "senate commando"],
       "description": "Assembled only. Never played with. Brand new. Sealed in a bag.",
       "remaining": 1
+    },
+    {
+      "id": "sw0518",
+      "name": "Lego Star Wars — Clone Scout Trooper, 41st Elite Corps (Phase 2) - Kashyyyk Camouflage",
+      "setNumber": "SW0518",
+      "category": "Minifigure",
+      "condition": "New",
+      "availability": "in_stock",
+      "price": 25,
+      "images": [
+        "assets/sw0518-1.jpg",
+        "assets/sw0518-2.jpg"
+      ],
+      "tags": ["star wars", "clone trooper", "41st elite corps", "kashyyyk"],
+      "description": "Assembled only. Never played with. Sealed in a bag.",
+      "remaining": 1
     }
   ]
 }
