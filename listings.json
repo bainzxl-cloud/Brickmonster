@@ -229,6 +229,21 @@
       "tags": ["star wars", "clone trooper", "187th legion", "phase 2", "nougat head"],
       "description": "Assembled only. Never played with. Sealed in a bag.",
       "remaining": 1
+    },
+    {
+      "id": "sw0299",
+      "name": "Lego Star Wars — Clone Bomb Squad Trooper (Phase 1) - Large Eyes",
+      "setNumber": "SW0299",
+      "category": "Minifigure",
+      "condition": "New",
+      "availability": "in_stock",
+      "price": 11,
+      "images": [
+        "assets/sw0299-1.jpg"
+      ],
+      "tags": ["star wars", "clone bomb squad trooper", "phase 1", "large eyes"],
+      "description": "Assembled only. Never played with. Sealed in a bag.",
+      "remaining": 1
     }
   ]
 }
