@@ -214,6 +214,21 @@
       "tags": ["star wars", "clone airborne trooper", "phase 2", "geonosis"],
       "description": "Assembled only. Never played with. Sealed in a bag.",
       "remaining": 1
+    },
+    {
+      "id": "sw1207",
+      "name": "Lego Star Wars — Clone Trooper, 187th Legion (Phase 2) - Nougat Head",
+      "setNumber": "SW1207",
+      "category": "Minifigure",
+      "condition": "New",
+      "availability": "in_stock",
+      "price": 18,
+      "images": [
+        "assets/sw1207-1.jpg"
+      ],
+      "tags": ["star wars", "clone trooper", "187th legion", "phase 2", "nougat head"],
+      "description": "Assembled only. Never played with. Sealed in a bag.",
+      "remaining": 1
     }
   ]
 }
