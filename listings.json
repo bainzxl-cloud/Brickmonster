@@ -259,6 +259,21 @@
       "tags": ["star wars", "arc trooper", "fives", "501st legion", "phase 2"],
       "description": "Assembled only. Never played with. Sealed in a bag.",
       "remaining": 1
+    },
+    {
+      "id": "sw0201",
+      "name": "Lego Star Wars — Clone Trooper (Phase 1) - Large Eyes",
+      "setNumber": "SW0201",
+      "category": "Minifigure",
+      "condition": "New",
+      "availability": "in_stock",
+      "price": 20,
+      "images": [
+        "assets/sw0201-1.jpg"
+      ],
+      "tags": ["star wars", "clone trooper", "phase 1", "large eyes"],
+      "description": "Assembled only. Never played with. Sealed in a bag.",
+      "remaining": 1
     }
   ]
 }
