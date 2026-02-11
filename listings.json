@@ -8,8 +8,6 @@
     "shippingNote": "DM for shipping info"
   },
   "items": [
-    
-
     {
       "id": "lor139",
       "name": "Lego LOR139 — Lord of the Rings (Sauron)",
@@ -85,7 +83,7 @@
       "category": "Set",
       "condition": "New",
       "availability": "in_stock",
-      "price": 109,
+      "price": 103,
       "images": [
         "assets/75203-1.png",
         "assets/75203-2.png"
@@ -110,194 +108,6 @@
       "remaining": 1
     },
     {
-      "id": "sw1027",
-      "name": "LEGO Star Wars - Lando Calrissian, Cloud City Outfit (20th Anniversary Torso)",
-      "setNumber": "SW1027",
-      "category": "Minifigure",
-      "condition": "New",
-      "availability": "in_stock",
-      "price": 70,
-      "images": [
-        "assets/sw1027-1.png",
-        "assets/sw1027-2.png"
-      ],
-      "tags": ["star wars", "lando"],
-      "description": "Assembled only, never played with. No cracks. Plate included. Sealed in a bag.",
-      "remaining": 2
-    },
-    {
-      "id": "nex106",
-      "name": "Lego NEXO Knights - Clay Moorington (Stone Clay)",
-      "setNumber": "NEX106",
-      "category": "Minifigure",
-      "condition": "New",
-      "availability": "in_stock",
-      "price": 79,
-      "images": [
-        "assets/nex106-1.jpg"
-      ],
-      "tags": ["nexo knights", "clay"],
-      "description": "Assembled only, never played with. No cracks. Weapon included. Sealed in a bag.",
-      "remaining": 1
-    },
-    {
-      "id": "sw0791",
-      "name": "Lego Star Wars - Jyn Erso",
-      "setNumber": "SW0791",
-      "category": "Minifigure",
-      "condition": "New",
-      "availability": "in_stock",
-      "price": 79,
-      "images": [
-        "assets/sw0791-1.jpg",
-        "assets/sw0791-2.png"
-      ],
-      "tags": ["star wars", "jyn erso"],
-      "description": "Assembled only, never played with. Weapon included (as shown on picture). Sealed in a bag.",
-      "remaining": 1
-    },
-    {
-      "id": "nex095",
-      "name": "Lego NEXO Knights - General Garg",
-      "setNumber": "NEX095",
-      "category": "Minifigure",
-      "condition": "New",
-      "availability": "in_stock",
-      "price": 100,
-      "images": [
-        "assets/nex095-1.jpg",
-        "assets/nex095-2.jpg"
-      ],
-      "tags": ["nexo knights", "general garg"],
-      "description": "Assembled only, never played with. No cracks. Sealed in a bag.",
-      "remaining": 1
-    },
-    {
-      "id": "sw0197",
-      "name": "Lego Star Wars - Obi-Wan Kenobi - Clone Wars, Large Eyes",
-      "setNumber": "SW0197",
-      "category": "Minifigure",
-      "condition": "New",
-      "availability": "in_stock",
-      "price": 19,
-      "images": [
-        "assets/sw0197-1.jpg"
-      ],
-      "tags": ["star wars", "obi-wan kenobi"],
-      "description": "Assembled only, never played with. No cracks. Weapon included. Sealed in a bag.",
-      "remaining": 1
-    },
-    {
-      "id": "sw0192",
-      "name": "Lego Star Wars - Ahsoka Tano (Padawan) - Tube Top and Belt",
-      "setNumber": "SW0192",
-      "category": "Minifigure",
-      "condition": "New",
-      "availability": "in_stock",
-      "price": 25,
-      "images": [
-        "assets/sw0192-1.jpg"
-      ],
-      "tags": ["star wars", "ahsoka tano"],
-      "description": "Assembled only, never played with. No cracks. Weapon included. Sealed in a bag.",
-      "remaining": 1
-    },
-    {
-      "id": "sw1216",
-      "name": "Lego Star Wars - Taun We",
-      "setNumber": "SW1216",
-      "category": "Minifigure",
-      "condition": "New",
-      "availability": "in_stock",
-      "price": 10,
-      "images": [
-        "assets/sw1216-1.jpg"
-      ],
-      "tags": ["star wars", "taun we"],
-      "description": "Assembled only, never played with. No cracks. Weapon included. Sealed in a bag.",
-      "remaining": 1
-    },
-    {
-      "id": "loc097",
-      "name": "Lego Legends of Chima - Lagravis - Fire Chi",
-      "setNumber": "LOC097",
-      "category": "Minifigure",
-      "condition": "New",
-      "availability": "in_stock",
-      "price": 10,
-      "images": [
-        "assets/loc097-1.jpg"
-      ],
-      "tags": ["legends of chima", "lagravis"],
-      "description": "Assembled only, never played with. No cracks. Weapon included. Sealed in a bag.",
-      "remaining": 1
-    },
-    {
-      "id": "sw1372",
-      "name": "Lego Star Wars - Nien Nunb",
-      "setNumber": "SW1372",
-      "category": "Minifigure",
-      "condition": "New",
-      "availability": "in_stock",
-      "price": 35,
-      "images": [
-        "assets/sw1372-1.jpg",
-        "assets/sw1372-2.png"
-      ],
-      "tags": ["star wars", "nien nunb"],
-      "description": "Assembled only, never played with. Comes with stand. Sealed in a bag.",
-      "remaining": 1
-    },
-    {
-      "id": "nex081",
-      "name": "Lego NEXO Knights - Gargoyle - Dark Purple Wings with Trans-Light Blue Membranes",
-      "setNumber": "NEX081",
-      "category": "Minifigure",
-      "condition": "New",
-      "availability": "in_stock",
-      "price": 40,
-      "images": [
-        "assets/nex081-1.jpg",
-        "assets/nex081-2.png"
-      ],
-      "tags": ["nexo knights", "gargoyle"],
-      "description": "No cracks. Assembled only, never played with. Weapon included. Sealed in a bag.",
-      "remaining": 1
-    },
-    {
-      "id": "sw1152",
-      "name": "Lego Star Wars - Clone Commando Commander Crosshair, Imperial Elite squad",
-      "setNumber": "SW1152",
-      "category": "Minifigure",
-      "condition": "New",
-      "availability": "in_stock",
-      "price": 36,
-      "images": [
-        "assets/sw1152-1.jpg",
-        "assets/sw1152-2.jpg",
-        "assets/sw1152-3.png"
-      ],
-      "tags": ["star wars", "crosshair"],
-      "description": "Assembled only, never played with. Weapon included. Sealed in a bag.",
-      "remaining": 1
-    },
-    {
-      "id": "75021",
-      "name": "Lego Star Wars - Republic Gunship",
-      "setNumber": "75021",
-      "category": "Set",
-      "condition": "New",
-      "availability": "in_stock",
-      "price": 1030,
-      "images": [
-        "assets/75021-1.png",
-        "assets/75021-2.png"
-      ],
-      "tags": ["star wars", "republic gunship"],
-      "description": "Sealed box. Has some shelfware. Box condition 7/10.",
-      "remaining": 1
-    },
-    {
       "id": "nex097",
       "name": "Lego NEXO Knights - Harpy",
       "setNumber": "NEX097",
@@ -311,6 +121,22 @@
       ],
       "tags": ["nexo knights", "harpy"],
       "description": "Assembled and sealed in a bag. No cracks.",
+      "remaining": 1
+    },
+    {
+      "id": "sw0244",
+      "name": "Lego Star Wars — Senate Commando",
+      "setNumber": "SW0244",
+      "category": "Minifigure",
+      "condition": "New",
+      "availability": "in_stock",
+      "price": 19,
+      "images": [
+        "assets/sw0244-1.png",
+        "assets/sw0244-2.jpg"
+      ],
+      "tags": ["star wars", "senate commando"],
+      "description": "Assembled only. Never played with. Brand new. Sealed in a bag.",
       "remaining": 1
     }
   ]
