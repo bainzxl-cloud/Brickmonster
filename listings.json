@@ -244,6 +244,21 @@
       "tags": ["star wars", "clone bomb squad trooper", "phase 1", "large eyes"],
       "description": "Assembled only. Never played with. Sealed in a bag.",
       "remaining": 1
+    },
+    {
+      "id": "sw1329",
+      "name": "Lego Star Wars — Clone ARC Trooper Fives, 501st Legion (Phase 2)",
+      "setNumber": "SW1329",
+      "category": "Minifigure",
+      "condition": "New",
+      "availability": "in_stock",
+      "price": 20,
+      "images": [
+        "assets/sw1329-1.jpg"
+      ],
+      "tags": ["star wars", "arc trooper", "fives", "501st legion", "phase 2"],
+      "description": "Assembled only. Never played with. Sealed in a bag.",
+      "remaining": 1
     }
   ]
 }
