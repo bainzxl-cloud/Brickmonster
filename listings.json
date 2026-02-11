@@ -154,6 +154,21 @@
       "tags": ["star wars", "clone trooper", "41st elite corps", "kashyyyk"],
       "description": "Assembled only. Never played with. Sealed in a bag.",
       "remaining": 1
+    },
+    {
+      "id": "sw0378",
+      "name": "Lego Star Wars — Clone ARF Trooper, Rancor Battalion (Phase 1) - Large Eyes",
+      "setNumber": "SW0378",
+      "category": "Minifigure",
+      "condition": "New",
+      "availability": "in_stock",
+      "price": 20,
+      "images": [
+        "assets/sw0378-1.jpg"
+      ],
+      "tags": ["star wars", "arf trooper", "rancor battalion"],
+      "description": "Assembled only. Never played with. Sealed in a bag.",
+      "remaining": 1
     }
   ]
 }
