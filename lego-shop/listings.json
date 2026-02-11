@@ -122,6 +122,22 @@
       "tags": ["nexo knights", "harpy"],
       "description": "Assembled and sealed in a bag. No cracks.",
       "remaining": 1
+    },
+    {
+      "id": "sw0244",
+      "name": "Lego Star Wars — Senate Commando",
+      "setNumber": "SW0244",
+      "category": "Minifigure",
+      "condition": "New",
+      "availability": "in_stock",
+      "price": 19,
+      "images": [
+        "assets/sw0244-1.png",
+        "assets/sw0244-2.jpg"
+      ],
+      "tags": ["star wars", "senate commando"],
+      "description": "Assembled only. Never played with. Brand new. Sealed in a bag.",
+      "remaining": 1
     }
   ]
 }
