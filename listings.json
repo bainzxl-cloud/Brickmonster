@@ -99,7 +99,7 @@
       "category": "Set",
       "condition": "New",
       "availability": "in_stock",
-      "price": 1630,
+      "price": 1030,
       "images": [
         "assets/75021-1.png",
         "assets/75021-2.png"
@@ -140,12 +140,12 @@
     },
     {
       "id": "nex081",
-      "name": "Lego NEXO Knights - Knight",
+      "name": "Lego NEXO Knights-Gargoyle - Dark Purple Wings with Trans-Light Blue Membranes",
       "setNumber": "NEX081",
       "category": "Minifigure",
       "condition": "New",
       "availability": "in_stock",
-      "price": 15.45,
+      "price": 45,
       "images": [
         "assets/nex081-1.jpg",
         "assets/nex081-2.png"
@@ -172,12 +172,12 @@
     },
     {
       "id": "nex106",
-      "name": "Lego NEXO Knights - Figure",
+      "name": "Lego NEXO Knights-Clay Moorington - Sand Blue Helmet and Armor, Trans-Light Blue Visor (Stone Clay)",
       "setNumber": "NEX106",
       "category": "Minifigure",
       "condition": "New",
       "availability": "in_stock",
-      "price": 17.90,
+      "price": 100,
       "images": [
         "assets/nex106-1.jpg"
       ],
