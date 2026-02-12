@@ -340,12 +340,12 @@
     },
     {
       "id": "sw0791",
-      "name": "Lego Star Wars - Clone Trooper",
+      "name": "Lego Star Wars -Jyn Erso",
       "setNumber": "SW0791",
       "category": "Minifigure",
       "condition": "New",
       "availability": "in_stock",
-      "price": 20.80,
+      "price": 80,
       "images": [
         "assets/sw0791-1.jpg",
         "assets/sw0791-2.png"
@@ -356,12 +356,12 @@
     },
     {
       "id": "sw1027",
-      "name": "Lego Star Wars - Clone Trooper",
+      "name": "Lego Star Wars-Lando Calrissian, Cloud City Outfit (20th Anniversary Torso)",
       "setNumber": "SW1027",
       "category": "Minifigure",
       "condition": "New",
       "availability": "in_stock",
-      "price": 21.80,
+      "price": 80,
       "images": [
         "assets/sw1027-1.png",
         "assets/sw1027-2.png"
@@ -404,12 +404,12 @@
     },
     {
       "id": "sw1216",
-      "name": "Lego Star Wars - Clone Trooper",
+      "name": "Lego Star Wars-Taun We",
       "setNumber": "SW1216",
       "category": "Minifigure",
       "condition": "New",
       "availability": "in_stock",
-      "price": 18.20,
+      "price": 13,
       "images": [
         "assets/sw1216-1.jpg"
       ],
@@ -439,7 +439,7 @@
       "category": "Minifigure",
       "condition": "New",
       "availability": "in_stock",
-      "price": 17.90,
+      "price": 30,
       "images": [
         "assets/sw1372-1.jpg",
         "assets/sw1372-2.png"
@@ -455,7 +455,7 @@
       "category": "Minifigure",
       "condition": "New",
       "availability": "in_stock",
-      "price": 20,
+      "price": 13,
       "images": [
         "assets/sw0201-1.jpg"
       ],
