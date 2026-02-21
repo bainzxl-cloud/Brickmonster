@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - BrickMonster</title>
+  <script src="https://js.stripe.com/v3/"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f5; 
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .checkout-container {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+      max-width: 480px;
+      width: 100%;
+      padding: 32px;
+    }
+    .product-info { margin-bottom: 24px; }
+    .product-name { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+    .product-price { font-size: 28px; font-weight: 700; color: #2ecc71; }
+    .product-details { color: #666; font-size: 14px; margin-top: 8px; }
+    .btn {
+      width: 100%;
+      padding: 16px;
+      background: #635bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn:hover { background: #4f46e5; }
+    .btn:disabled { background: #ccc; cursor: not-allowed; }
+    .error { color: #e74c3c; margin-top: 16px; text-align: center; }
+    .loading { text-align: center; color: #666; }
+  </style>
+</head>
+<body>
+  <div class="checkout-container">
+    <div id="loading" class="loading">Loading...</div>
+    <div id="checkout" style="display: none;">
+      <div class="product-info">
+        <div class="product-name" id="productName">Loading...</div>
+        <div class="product-price" id="productPrice">...</div>
+        <div class="product-details" id="productDetails"></div>
+      </div>
+      <button id="payButton" class="btn">Pay Now</button>
+      <div id="error" class="error"></div>
+    </div>
+  </div>
+
+  <script>
+    // Your Stripe publishable key
+    const stripe = Stripe('pk_test_51T365wPM6LgeUOHr4Qr7bUoRpbjHuvIPqOtD5YqofDwIEMsKk5SVpD0kXHCOaRgm3vMciTRRsWFzCKxyRERMxxFL00N6Fmaxgw');
+
+    // Get product ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id');
+
+    // Product data (matches your listings.json)
+    const products = {
+      '75021': { name: 'LEGO Star Wars Republic Gunship', price: 103000, setNum: '75021' },
+      // Add more products here as needed
+    };
+
+    // For demo, create a dynamic price based on product
+    async function initCheckout() {
+      const loading = document.getElementById('loading');
+      const checkout = document.getElementById('checkout');
+      
+      // For this demo, we'll use a fixed test price
+      // In production, you'd fetch from your backend
+      const productName = 'LEGO Set Purchase';
+      const productPrice = 50.00; // CAD - will be overridden by actual price
+      
+      document.getElementById('productName').textContent = productName;
+      document.getElementById('productPrice').textContent = '$' + productPrice.toFixed(2) + ' CAD';
+      document.getElementById('productDetails').textContent = 'Test purchase - BrickMonster Store';
+      
+      loading.style.display = 'none';
+      checkout.style.display = 'block';
+
+      // Handle payment
+      document.getElementById('payButton').addEventListener('click', async () => {
+        const btn = document.getElementById('payButton');
+        btn.disabled = true;
+        btn.textContent = 'Processing...';
+        
+        try {
+          // For a real implementation, you need a backend to create a checkout session
+          // Here's a simple redirect-based checkout for demo
+          
+          // In production: call your backend → stripe.checkout.sessions.create()
+          // For now, we'll show instructions
+          
+          alert('For real payments, this needs a backend server. \n\nOptions:\n1. Use Stripe Payment Links (no code)\n2. Set up a simple serverless function\n\nContact Asa to set this up!');
+          
+          btn.disabled = false;
+          btn.textContent = 'Pay Now';
+          
+        } catch (err) {
+          document.getElementById('error').textContent = err.message;
+          btn.disabled = false;
+          btn.textContent = 'Pay Now';
+        }
+      });
+    }
+
+    initCheckout();
+  </script>
+</body>
+</html>

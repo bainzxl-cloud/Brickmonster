@@ -9,6 +9,8 @@ const CONFIG = {
   shippingNote: "",
 };
 
+let PAYMENT_LINKS = {};
+
 const $ = (id) => document.getElementById(id);
 
 function safeText(s){
@@ -182,6 +184,14 @@ function setMetaTitle(name){
 async function init(){
   buildBackLink();
 
+  // Load payment links
+  try {
+    const plRes = await fetch('payment_links.json', {cache:'no-store'});
+    const plData = await plRes.json();
+    PAYMENT_LINKS = {};
+    plData.forEach(p => { PAYMENT_LINKS[p.id] = p.link; });
+  } catch(e) { console.log('No payment links'); }
+
   const res = await fetch('listings.json', {cache:'no-store'});
   const data = await res.json();
   if(data.config) Object.assign(CONFIG, data.config);
@@ -241,6 +251,15 @@ async function init(){
   const dm = dmLinkFor(item);
   $('pDm').href = dm;
   $('pIg').href = dm;
+
+  // Add Buy Now button if payment link exists
+  const buyBtn = document.getElementById('pBuy');
+  if(buyBtn && PAYMENT_LINKS[item.id]) {
+    buyBtn.href = PAYMENT_LINKS[item.id];
+    buyBtn.style.display = 'inline-block';
+  } else if(buyBtn) {
+    buyBtn.style.display = 'none';
+  }
 
   setMetaTitle(item.name);
 
