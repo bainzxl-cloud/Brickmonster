@@ -46,6 +46,297 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* ============================================
+   PARTICLE CANVAS
+   ============================================ */
+
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============================================
+   FLOATING LEGO BRICKS
+   ============================================ */
+
+.floating-bricks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.brick {
+  position: absolute;
+  border-radius: 4px;
+  opacity: 0.12;
+}
+
+.brick--1 {
+  width: 60px;
+  height: 24px;
+  background: linear-gradient(135deg, var(--lego-red), var(--lego-orange));
+  top: 15%;
+  left: 5%;
+  animation: floatBrick1 12s ease-in-out infinite;
+  transform: rotate(-15deg);
+}
+
+.brick--2 {
+  width: 80px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--lego-yellow), var(--lego-orange));
+  top: 60%;
+  right: 8%;
+  animation: floatBrick2 15s ease-in-out infinite;
+  transform: rotate(20deg);
+}
+
+.brick--3 {
+  width: 50px;
+  height: 20px;
+  background: linear-gradient(135deg, var(--lego-blue), var(--lego-green));
+  bottom: 20%;
+  left: 12%;
+  animation: floatBrick3 10s ease-in-out infinite;
+  transform: rotate(-8deg);
+}
+
+.brick--4 {
+  width: 70px;
+  height: 28px;
+  background: linear-gradient(135deg, var(--lego-green), var(--lego-yellow));
+  top: 30%;
+  right: 15%;
+  animation: floatBrick4 14s ease-in-out infinite;
+  transform: rotate(12deg);
+}
+
+.brick--5 {
+  width: 45px;
+  height: 18px;
+  background: linear-gradient(135deg, var(--accent), var(--lego-yellow));
+  bottom: 35%;
+  right: 20%;
+  animation: floatBrick5 11s ease-in-out infinite;
+  transform: rotate(-18deg);
+}
+
+@keyframes floatBrick1 {
+  0%, 100% { transform: rotate(-15deg) translate(0, 0); }
+  50% { transform: rotate(-12deg) translate(20px, -30px); }
+}
+
+@keyframes floatBrick2 {
+  0%, 100% { transform: rotate(20deg) translate(0, 0); }
+  50% { transform: rotate(25deg) translate(-25px, 20px); }
+}
+
+@keyframes floatBrick3 {
+  0%, 100% { transform: rotate(-8deg) translate(0, 0); }
+  50% { transform: rotate(-15deg) translate(30px, -15px); }
+}
+
+@keyframes floatBrick4 {
+  0%, 100% { transform: rotate(12deg) translate(0, 0); }
+  50% { transform: rotate(8deg) translate(-15px, 25px); }
+}
+
+@keyframes floatBrick5 {
+  0%, 100% { transform: rotate(-18deg) translate(0, 0); }
+  50% { transform: rotate(-22deg) translate(20px, 20px); }
+}
+
+/* ============================================
+   PAGE LOAD ANIMATION
+   ============================================ */
+
+.header {
+  animation: slideDown 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hero {
+  animation: fadeInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.controls {
+  animation: fadeInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s both;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ============================================
+   ENHANCED CARD INTERACTIONS
+   ============================================ */
+
+.card {
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.34, 1.2, 0.64, 1);
+  position: relative;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  padding: 2px;
+  background: linear-gradient(135deg, var(--accent), var(--lego-yellow), var(--lego-blue), var(--lego-green));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.card:hover::before { opacity: 1; }
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  border-color: var(--accent);
+  box-shadow: 
+    0 25px 60px rgba(0, 0, 0, 0.5),
+    0 0 50px var(--accent-bg);
+}
+
+.card:active {
+  transform: translateY(-6px) scale(1.01);
+}
+
+.thumb {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  background: var(--bg);
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.card:hover .thumb { transform: scale(1.12); }
+
+/* Card shine effect on hover */
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.card:hover::after { left: 100%; }
+
+/* ============================================
+   SEARCH INPUT ANIMATION
+   ============================================ */
+
+.search-bar, 
+.controls__row:first-of-type .field:first-child {
+  position: relative;
+}
+
+.search-bar::before,
+.controls__row:first-of-type .field:first-child::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: calc(var(--radius-md) + 2px);
+  background: linear-gradient(135deg, var(--accent), var(--lego-yellow), var(--lego-blue));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  filter: blur(8px);
+}
+
+.controls__row:first-of-type .field:first-child:has(.input:focus)::before,
+.search-bar:focus-within::before {
+  opacity: 0.5;
+  animation: searchPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes searchPulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.02); }
+}
+
+/* ============================================
+   BUTTON PRESS EFFECT
+   ============================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  border: none;
+  font-weight: 700;
+  font-size: 13px;
+  font-family: var(--font-body);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 20px var(--accent-glow);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.btn:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 32px var(--accent-glow);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.97);
+}
+
 html { scroll-behavior: smooth; }
 
 body {
